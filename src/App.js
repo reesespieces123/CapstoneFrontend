@@ -16,6 +16,31 @@ import BoardAdmin from "./components/BoardAdmin";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
+//import Landing page
+import Landing from "./pages/Landing";
+//import Home page
+// import Home from "./components/DropdownComponent";
+// import Auditor page
+import Auditor from "./pages/Auditor";
+// import Employee page
+import Employee from "./pages/Employee";
+
+
+// import Register page
+// import Register from "./pages/Register";
+// import Form page
+import Form from "./pages/Form";
+// import Form page
+import Form2 from "./pages/Form-2";
+
+//import all reviewer strucute here
+
+// import Reviewer page
+import Reviewer from "./ReviewerStructure/Reviewer";
+import EmployeeTable from "./ReviewerStructure/EmployeeTable";
+import Section2 from "./ReviewerStructure/Section2";
+
+
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
@@ -115,7 +140,7 @@ const App = () => {
 
       <div className="container mt-3">
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -123,6 +148,20 @@ const App = () => {
           <Route path="/user" element={<BoardUser />} />
           <Route path="/mod" element={<BoardModerator />} />
           <Route path="/admin" element={<BoardAdmin />} />
+
+          <Route exact path="/" component={Landing} />
+          <Route path="/Home1" component={Home} />
+          <Route path="/Auditor" component={Auditor} />
+          <Route path="/Employee" component={Employee} />
+          <Route path="/Reviewer" component={Reviewer} />
+          {/*Register route*/}
+          {/* <Route path="/Register" component={Register} /> */}
+          <Route path="/Form" component={Form} />
+          <Route path="/Form-2" component={Form2} />
+          {/*REVIEWER STRUCTURE */}
+          <Route path="/Reviewer" component={Reviewer} />
+          <Route path="/EmployeeTable" component={EmployeeTable} />
+          <Route path="/Section2" component={Section2} />
         </Routes>
       </div>
     </div>
