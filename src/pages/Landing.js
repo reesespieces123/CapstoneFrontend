@@ -93,10 +93,10 @@ const Landing = () => {
                     <p>
                       Not a member? <a href="/Register">Register</a>
                     </p>
-                    {/*<p>or sign up with:</p>
+                    {/* <p>or sign up with:</p>
           <button type="button" className="btn btn-link btn-floating mx-1">
             <i className="fab fa-facebook-f"></i>
-          </button>*/}
+          </button> */}
 
                     <button
                       type="button"

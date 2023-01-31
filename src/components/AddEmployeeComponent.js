@@ -184,11 +184,10 @@ const AddEmployeeComponent = () => {
             </ul>
           </div>
         </nav>
-        
 
         <div className="container">
           {/* -max-width: 1519px */}
-          
+
           <div className="row">
             {/* -xxl */}
             <br />
@@ -202,7 +201,7 @@ const AddEmployeeComponent = () => {
                 {/* -xxl */}
 
                 <br />
-                <p className="paragraphs">
+                <div className="paragraphs">
                   <p className="paragraphs">
                     <b>
                       ►START HERE: Read instructions carefully before completing
@@ -221,7 +220,7 @@ const AddEmployeeComponent = () => {
                     because the documentation presented has a future expiration
                     date may also constitute illegal discrimination.{" "}
                   </p>
-                </p>
+                </div>
                 {/* FORM STARTS HERE */}
                 <form className="container">
                   {/* START OF DIV ROW */}
@@ -701,7 +700,7 @@ const AddEmployeeComponent = () => {
                     </b>
                   </label>
                   <br />
-                  <form className="row g-3">
+                  <div className="row g-3">
                     <div className="col-8">
                       <input
                         type="text"
@@ -787,7 +786,7 @@ const AddEmployeeComponent = () => {
                         onChange={(e) => setPreparerzip(e.target.value)}
                       ></input>
                     </div>
-                  </form>
+                  </div>
                   <br />
                   <br />
                   <div className="row">
@@ -805,7 +804,7 @@ const AddEmployeeComponent = () => {
                       {/* <!-- Modal --> */}
                       <div
                         className="modal"
-                        tabindex="-1"
+                        tabIndex="-1"
                         role="dialog"
                         aria-labelledby="staticBackdropLabel"
                         aria-hidden="true"
@@ -869,7 +868,7 @@ const AddEmployeeComponent = () => {
                       <div
                         className="modal"
                         id="exampleModal"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                         data-bs-backdrop="false"
