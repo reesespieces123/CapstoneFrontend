@@ -163,11 +163,9 @@ const AddRepresentativeComponent = () => {
               </ul>
             </div>
           </nav>
-          <br />
-          <br />
+          
           <div className="container">
-            <br />
-            <br />
+            
             <div className="row">
               <br />
               <br />

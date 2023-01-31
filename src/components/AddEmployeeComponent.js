@@ -184,13 +184,11 @@ const AddEmployeeComponent = () => {
             </ul>
           </div>
         </nav>
-        <br />
-        <br />
+        
 
         <div className="container">
           {/* -max-width: 1519px */}
-          <br />
-          <br />
+          
           <div className="row">
             {/* -xxl */}
             <br />

@@ -149,19 +149,19 @@ const App = () => {
           <Route path="/mod" element={<BoardModerator />} />
           <Route path="/admin" element={<BoardAdmin />} />
 
-          <Route exact path="/" component={Landing} />
-          <Route path="/Home1" component={Home} />
-          <Route path="/Auditor" component={Auditor} />
-          <Route path="/Employee" component={Employee} />
-          <Route path="/Reviewer" component={Reviewer} />
+          <Route exact path="/" element={<Landing/>} />
+          <Route path="/Home1" element={<Home/>} />
+          <Route path="/Auditor" element={<Auditor/>} />
+          <Route path="/Employee" element={<Employee/>} />
+          <Route path="/Reviewer" element={<Reviewer/>} />
           {/*Register route*/}
-          {/* <Route path="/Register" component={Register} /> */}
-          <Route path="/Form" component={Form} />
-          <Route path="/Form-2" component={Form2} />
+          {/* <Route path="/Register" element={Register} /> */}
+          <Route path="/Form" element={<Form/>} />
+          <Route path="/Form-2" element={<Form2/>} />
           {/*REVIEWER STRUCTURE */}
-          <Route path="/Reviewer" component={Reviewer} />
-          <Route path="/EmployeeTable" component={EmployeeTable} />
-          <Route path="/Section2" component={Section2} />
+          <Route path="/Reviewer" element={<Reviewer/>} />
+          <Route path="/EmployeeTable" element={<EmployeeTable/>} />
+          <Route path="/Section2" element={<Section2/>} />
         </Routes>
       </div>
     </div>
