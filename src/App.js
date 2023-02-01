@@ -123,6 +123,9 @@ const App = () => {
           <Route path="/user" element={<BoardUser />} />
           <Route path="/mod" element={<BoardModerator />} />
           <Route path="/admin" element={<BoardAdmin />} />
+
+          {/* EMPLOYEE ROUTES */}
+          
         </Routes>
       </div>
     </div>
