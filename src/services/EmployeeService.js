@@ -1,28 +1,37 @@
 import axios from "axios";
-import { AgGridReact } from "ag-grid-react";
+import authHeader from "../services/auth-header";
 
-const EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employees";
+const EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/test";
 
-class EmployeeService {
-  getAllEmployees() {
-    return axios.get(EMPLOYEE_BASE_REST_API_URL);
+// class EmployeeService {
+  const getAllEmployees=()=> {
+    return axios.get(EMPLOYEE_BASE_REST_API_URL, { headers: authHeader() });
   }
 
-  createEmployee(employee) {
+  const createEmployee=(employee)=> {
     return axios.post(EMPLOYEE_BASE_REST_API_URL, employee);
   }
 
-  getEmployeeById(employeeId) {
-    return axios.get(EMPLOYEE_BASE_REST_API_URL + "/" + employeeId);
+  const getEmployeeById=(employeeId)=> {
+    return axios.get(EMPLOYEE_BASE_REST_API_URL + "/" + employeeId, {
+      headers: authHeader()
+    });
   }
 
-  updateEmployee(employeeId, employee) {
-    return axios.put(EMPLOYEE_BASE_REST_API_URL + "/" + employeeId, employee);
+  const updateEmployee=(employeeId, employee)=> {
+    return axios.put(EMPLOYEE_BASE_REST_API_URL + "/" + employeeId, employee)
   }
 
-  deleteEmployee(employeeId) {
-    return axios.delete(EMPLOYEE_BASE_REST_API_URL + "/" + employeeId);
+  const deleteEmployee=(employeeId)=> {
+    return axios.delete(EMPLOYEE_BASE_REST_API_URL + "/" + employeeId)
   }
-}
+// }
 
-export default new EmployeeService();
+export default {
+  deleteEmployee,
+  updateEmployee,
+  createEmployee,
+  getAllEmployees,
+  getEmployeeById
+};
+//  new EmployeeService();

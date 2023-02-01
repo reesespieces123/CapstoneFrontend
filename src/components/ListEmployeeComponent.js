@@ -1,11 +1,14 @@
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-material.css"; // Optional theme CSS
 import "ag-grid-enterprise";
 
 const ListEmployeeComponent = () => {
+  const { user: currentUser } = useSelector((state) => state.auth);
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
@@ -60,29 +63,15 @@ const ListEmployeeComponent = () => {
   return (
     <>
       <div className="container-max-width: 1519px">
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-          <div className="container-fluid">
-            <ul className="navbar-nav">
-              <li>
-                <a className="navbar-brand" href="#">
-                  ADP Logo
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <br />
-        <br />
-        <br />
-
         <div className="container">
           <br />
 
           <div className="row">
             <br />
             <br />
-            <h2 className="text-left">Welcome Reviewer!</h2>
+            <h2 className="text-left">
+              Welcome <strong>{currentUser.username}</strong>!
+            </h2>
             <br />
             <div
               className="ag-theme-material"

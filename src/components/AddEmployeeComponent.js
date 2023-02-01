@@ -158,32 +158,7 @@ const AddEmployeeComponent = () => {
   return (
     <>
       <div className="container-max-width: 1519px">
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-          <div className="container-fluid">
-            <ul className="navbar-nav">
-              <li>
-                <a className="navbar-brand" href="#">
-                  ADP Logo
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="http://localhost:3000/Form">
-                  I-9 Section 1
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000/Section2">
-                  I-9 Section 2
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Document Submissions
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        
 
         <div className="container">
           {/* -max-width: 1519px */}

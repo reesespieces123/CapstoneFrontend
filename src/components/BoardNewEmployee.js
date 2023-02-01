@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import EmployeeService from "../services/EmployeeService";
 
 import UserService from "../reducers/user.service";
-
-const BoardUser = () => {
+import AddEmployeeComponent from "./AddEmployeeComponent";
+const BoardNewEmployee = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -24,12 +25,10 @@ const BoardUser = () => {
   }, []);
 
   return (
-    <div className="container">
-      <header className="jumbotron">
-        <h3>{content}</h3>
-      </header>
-    </div>
+    <>
+      <AddEmployeeComponent />
+    </>
   );
 };
 
-export default BoardUser;
+export default BoardNewEmployee;

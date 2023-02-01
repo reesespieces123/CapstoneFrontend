@@ -9,8 +9,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-import BoardUser from "./components/BoardUser";
-import BoardModerator from "./components/BoardModerator";
+import BoardNewEmployee from "./components/BoardNewEmployee";
+import BoardReviewer from "./components/BoardReviewer";
 import BoardAdmin from "./components/BoardAdmin";
 
 import { logout } from "./actions/auth";
@@ -74,7 +74,7 @@ const App = () => {
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">
-          bezKoder
+          ADP Logo
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -85,8 +85,15 @@ const App = () => {
 
           {showModeratorBoard && (
             <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
-                Moderator Board
+              <Link to={"/reviewer"} className="nav-link">
+                Reviewer Board
+              </Link>
+            </li>
+          )}
+          {showModeratorBoard && (
+            <li className="nav-item">
+              <Link to={"/Section2"} className="nav-link">
+                I-9 Section 2
               </Link>
             </li>
           )}
@@ -101,8 +108,8 @@ const App = () => {
 
           {currentUser && (
             <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
-                User
+              <Link to={"/NewEmployee"} className="nav-link">
+                New Employee
               </Link>
             </li>
           )}
@@ -145,23 +152,23 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/user" element={<BoardUser />} />
-          <Route path="/mod" element={<BoardModerator />} />
+          <Route path="/newemployee" element={<BoardNewEmployee />} />
+          <Route path="/reviewer" element={<BoardReviewer />} />
           <Route path="/admin" element={<BoardAdmin />} />
 
-          <Route exact path="/" element={<Landing/>} />
-          <Route path="/Home1" element={<Home/>} />
-          <Route path="/Auditor" element={<Auditor/>} />
-          <Route path="/Employee" element={<Employee/>} />
-          <Route path="/Reviewer" element={<Reviewer/>} />
+          <Route exact path="/" element={<Landing />} />
+          <Route path="/Home1" element={<Home />} />
+          <Route path="/Auditor" element={<Auditor />} />
+          <Route path="/Employee" element={<Employee />} />
+          <Route path="/Reviewer" element={<Reviewer />} />
           {/*Register route*/}
           {/* <Route path="/Register" element={Register} /> */}
-          <Route path="/Form" element={<Form/>} />
-          <Route path="/Form-2" element={<Form2/>} />
+          <Route path="/Form" element={<Form />} />
+          <Route path="/Form-2" element={<Form2 />} />
           {/*REVIEWER STRUCTURE */}
-          <Route path="/Reviewer" element={<Reviewer/>} />
-          <Route path="/EmployeeTable" element={<EmployeeTable/>} />
-          <Route path="/Section2" element={<Section2/>} />
+          <Route path="/Reviewer" element={<Reviewer />} />
+          <Route path="/EmployeeTable" element={<EmployeeTable />} />
+          <Route path="/Section2" element={<Section2 />} />
         </Routes>
       </div>
     </div>

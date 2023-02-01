@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import RepresentativeService from "../services/RepresentativeService";
 import i9Instructions from "../components/i9Instructions.pdf";
+// import { Navigate } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { Link } from "react-router-dom";
+
 
 const AddRepresentativeComponent = () => {
   const [representative, setRepresentative] = useState({
@@ -137,34 +141,7 @@ const AddRepresentativeComponent = () => {
     >
       <div>
         <div className="container-max-width: 1519px">
-          <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-            <div className="container-fluid">
-              <ul className="navbar-nav">
-                <li>
-                  <a className="navbar-brand" href="#">
-                    ADP Logo
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link " href="http://localhost:3000/Form">
-                    I-9 Section 1
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="http://localhost:3000/Section2">
-                    I-9 Section 2
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Document Submissions
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          
-          <div className="container">
+            <div className="container">
             
             <div className="row">
               <br />
