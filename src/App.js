@@ -25,21 +25,19 @@ import Auditor from "./pages/Auditor";
 // import Employee page
 import Employee from "./pages/Employee";
 
-
 // import Register page
 // import Register from "./pages/Register";
 // import Form page
-import Form from "./pages/Form";
+import Form from "./pages/EmployeePages/Form";
 // import Form page
 import Form2 from "./pages/Form-2";
 
 //import all reviewer strucute here
 
 // import Reviewer page
-import Reviewer from "./ReviewerStructure/Reviewer";
-import EmployeeTable from "./ReviewerStructure/EmployeeTable";
-import Section2 from "./ReviewerStructure/Section2";
-
+import Reviewer from "./pages/ReviewerPages/Reviewer";
+import EmployeeTable from "./pages/ReviewerPages/EmployeeTable";
+import Section2 from "./pages/ReviewerPages/Section2";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);

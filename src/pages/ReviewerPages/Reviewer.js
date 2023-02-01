@@ -19,7 +19,7 @@ const HomeReviewer = () => {
           </Link>
         </div>
       </div>
-      {/*SECTION 2 CARD */}
+      {/* SECTION 2 CARD
       <div className="card">
         <div className="card-header">Title</div>
         <div className="card-body">
@@ -29,7 +29,7 @@ const HomeReviewer = () => {
             Section 2
           </Link>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

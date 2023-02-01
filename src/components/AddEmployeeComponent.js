@@ -605,6 +605,8 @@ const AddEmployeeComponent = () => {
                           </div>
                           <br />
                           <br />
+                          </div>
+                          </li>
                           <div className="row">
                             <div className="col-7">
                               <label>Country of Issuance:</label>
@@ -623,8 +625,7 @@ const AddEmployeeComponent = () => {
                               />
                             </div>
                           </div>
-                        </div>
-                      </li>
+                        
                     </ol>
                   </div>
                   {/* //////////////////////////////////////// */}

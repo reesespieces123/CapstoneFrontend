@@ -141,8 +141,7 @@ const AddRepresentativeComponent = () => {
     >
       <div>
         <div className="container-max-width: 1519px">
-            <div className="container">
-            
+          <div className="container">
             <div className="row">
               <br />
               <br />
@@ -505,7 +504,7 @@ const AddRepresentativeComponent = () => {
                       </div>
                     </div>
                     <br />
-                    <div className="row">
+                    {/* <div className="row">
                       <div className="col-sm">
                         <button
                           className="btn btn-success"
@@ -521,6 +520,128 @@ const AddRepresentativeComponent = () => {
                       <Link to="/Register" className="btn btn-danger">
                         Cancel
                       </Link>
+                    </div> */}
+                    <div class="row">
+                      <div class="col offset-md-3">
+                        {/* <!-- SUBMIT trigger modal --> */}
+                        <button
+                          type="button"
+                          class="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop"
+                        >
+                          SUBMIT
+                        </button>
+
+                        {/* <!-- Modal --> */}
+                        <div
+                          class="modal"
+                          tabindex="-1"
+                          role="dialog"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                          id="staticBackdrop"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5
+                                  class="modal-title"
+                                  id="staticBackdropLabel"
+                                >
+                                  ALERT
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div class="modal-body">
+                                Please ensure that all information is entered
+                                correctly!
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Return
+                                </button>
+                                <button
+                                  type="submit"
+                                  class="btn btn-success"
+                                  onClick={(e) => saveOrUpdateRepresentative(e)}
+                                  data-bs-dismiss="modal"
+                                >
+                                  Submit
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col offset-md">
+                        {/* <!-- CANCEL trigger modal --> */}
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          CANCEL
+                        </button>
+
+                        {/* <!-- Modal --> */}
+                        <div
+                          class="modal"
+                          id="exampleModal"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                          data-bs-backdrop="false"
+                          data-bs-keyboard="false"
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                  ALERT
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div class="modal-body">
+                                Are you sure you want to cancel? This will
+                                result in your data not being submitted or
+                                saved.
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-success"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Cancel
+                                </button>
+
+                                <Link to="/Employee" class="btn btn-danger">
+                                  Continue
+                                </Link>
+                              </div>
+                              <br />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <br />

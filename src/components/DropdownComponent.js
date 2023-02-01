@@ -5,25 +5,25 @@ import "../styles/Dropdown.css";
 const Dropdown = () => {
   return (
     <>
-    <br/>
+      <br />
       <div>
         <h1 className="title">ADP Systems</h1>
         <br />
       </div>
 
-<div className="menu">
-      <div className="btn-group dropend-center">
-        <button type="button" className="btn btn-outline-danger">
-          SELECT
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-danger dropdown-toggle dropdown-toggle-split"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <span className="visually-hidden"> </span>
-        </button>
+      <div className="menu">
+        <div className="btn-group dropend-center">
+          <button type="button" className="btn btn-outline-danger">
+            SELECT
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-danger dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span className="visually-hidden"> </span>
+          </button>
           <ul className="dropdown-menu">
             <li>
               <a className="dropdown-item" href="/Auditor">
