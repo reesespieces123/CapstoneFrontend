@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -13,24 +14,37 @@ const Profile = () => {
     <div className="container">
       <header className="jumbotron">
         <h3>
-          <strong>{currentUser.username}</strong> Profile
+          Welcome <strong>{currentUser.username}</strong>!
         </h3>
       </header>
       <p>
-        <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
-        {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+        Click here to begin your I-9! <br />
       </p>
+      <div>
+        <Link to="/NewEmployee" relative="path" className="btn btn-primary">
+          Click Here
+        </Link>
+      </div>
       <p>
-        <strong>Id:</strong> {currentUser.id}
+        {/* <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
+        {currentUser.accessToken.substr(currentUser.accessToken.length - 20)} */}
+        Already Filled Out Your I-9? <br />
+        Click here to check your form status
       </p>
+      <div>
+        <Link to="/NewEmployee" relative="path" className="btn btn-primary">
+          Click Here
+        </Link>
+      </div>
       <p>
-        <strong>Email:</strong> {currentUser.email}
+        <strong>Your Employee Id Number:</strong> {currentUser.id}
       </p>
-      <strong>Authorities:</strong>
+      <p>{/* <strong>Email:</strong> {currentUser.email} */}</p>
+      {/* <strong>Authorities:</strong>
       <ul>
         {currentUser.roles &&
           currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-      </ul>
+      </ul> */}
     </div>
   );
 };
