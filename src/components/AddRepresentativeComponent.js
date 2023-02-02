@@ -6,7 +6,6 @@ import i9Instructions from "../components/i9Instructions.pdf";
 // import { useSelector } from "react-redux";
 // import { Link } from "react-router-dom";
 
-
 const AddRepresentativeComponent = () => {
   const [representative, setRepresentative] = useState({
     DocumentTitle_A1: "",
@@ -70,7 +69,7 @@ const AddRepresentativeComponent = () => {
     } else {
       RepresentativeService.createRepresentative(representative)
         .then((response) => {
-          history.push("/representative");
+          history.push("/reviewer");
         })
         .catch((error) => {
           console.log(error);
@@ -141,8 +140,7 @@ const AddRepresentativeComponent = () => {
     >
       <div>
         <div className="container-max-width: 1519px">
-            <div className="container">
-            
+          <div className="container">
             <div className="row">
               <br />
               <br />
@@ -505,23 +503,134 @@ const AddRepresentativeComponent = () => {
                       </div>
                     </div>
                     <br />
+                    {/* ////////////// */}
+
                     <div className="row">
-                      <div className="col-sm">
+                      <div className="col offset-md-3">
+                        {/* <!-- SUBMIT trigger modal --> */}
                         <button
+                          type="button"
                           className="btn btn-success"
-                          onClick={(e) => saveOrUpdateRepresentative(e)}
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop"
                         >
-                          Submit
+                          SUBMIT
                         </button>
+
+                        {/* <!-- Modal --> */}
+                        <div
+                          className="modal"
+                          tabindex="-1"
+                          role="dialog"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                          id="staticBackdrop"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                        >
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5
+                                  className="modal-title"
+                                  id="staticBackdropLabel"
+                                >
+                                  ALERT
+                                </h5>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div className="modal-body">
+                                Please ensure that all information is entered
+                                correctly!
+                              </div>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Return
+                                </button>
+                                <button
+                                  type="submit"
+                                  className="btn btn-success"
+                                  onClick={(e) => saveOrUpdateRepresentative(e)}
+                                  data-bs-dismiss="modal"
+                                >
+                                  Submit
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <br />
-                      <br />
+                      <div className="col offset-md">
+                        {/* <!-- CANCEL trigger modal --> */}
+                        <button
+                          type="button"
+                          className="btn btn-danger"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          CANCEL
+                        </button>
+
+                        {/* <!-- Modal --> */}
+                        <div
+                          className="modal"
+                          id="exampleModal"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                          data-bs-backdrop="false"
+                          data-bs-keyboard="false"
+                        >
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5
+                                  className="modal-title"
+                                  id="exampleModalLabel"
+                                >
+                                  ALERT
+                                </h5>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div className="modal-body">
+                                Are you sure you want to cancel? This will
+                                result in your data not being submitted or
+                                saved.
+                              </div>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Cancel
+                                </button>
+
+                                <Link to="/reviewer" className="btn btn-success">
+                                  Continue
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="col-sm">
-                      <Link to="/Register" className="btn btn-danger">
-                        Cancel
-                      </Link>
-                    </div>
+
+                    {/* ///////////////////////// */}
                   </div>
                   <br />
                 </div>
