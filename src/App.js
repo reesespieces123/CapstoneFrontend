@@ -5,16 +5,35 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./components/Login";
-import Register from "./components/Register";
+// Login/Register connectivity pages
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
-import BoardUser from "./components/BoardUser";
-import BoardModerator from "./components/BoardModerator";
+import Profile from "./pages/Profile";
+
+// idk pages
+import Empty from "./pages/Empty";
 import BoardAdmin from "./components/BoardAdmin";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
+
+// import Auditor page
+import Auditor from "./pages/Auditor";
+
+// EMPLOYEE PAGES
+// section 1 form for employee
+import Section1 from "./EmployeeStructure/Section1";
+// after submitting - success page
+import Success from "./EmployeeStructure/Success";
+
+// REVIEWER PAGES //
+// section 2 for reviewer
+import Section2 from "./ReviewerStructure/Section2";
+// table
+import BoardReviewer from "./ReviewerStructure/BoardReviewer";
+// renders each employee id to its own page
+import EmployeeId from "./ReviewerStructure/EmployeeId";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -49,7 +68,7 @@ const App = () => {
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">
-          bezKoder
+          ADP Logo
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -60,8 +79,8 @@ const App = () => {
 
           {showModeratorBoard && (
             <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
-                Moderator Board
+              <Link to={"/reviewer"} className="nav-link">
+                Reviewer Board
               </Link>
             </li>
           )}
@@ -76,8 +95,8 @@ const App = () => {
 
           {currentUser && (
             <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
-                User
+              <Link to={"/EMPTY"} className="nav-link">
+                EMPTY PAGE
               </Link>
             </li>
           )}
@@ -115,14 +134,25 @@ const App = () => {
 
       <div className="container mt-3">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          {/* HOME PAGE */}
+          <Route exact path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/user" element={<BoardUser />} />
-          <Route path="/mod" element={<BoardModerator />} />
-          <Route path="/admin" element={<BoardAdmin />} />
+          {/* IDK PAGES */}
+          <Route path="/Empty" element={<Empty />} />
+          <Route path="/Admin" element={<BoardAdmin />} />
+
+          {/* AUDITOR PATHS */}
+          <Route path="/Auditor" element={<Auditor />} />
+
+          {/* EMPLOYEE PATHS */}
+          <Route path="/Section1" element={<Section1 />} />
+          <Route path="/Success" element={<Success />} />
+          {/*REVIEWER PATHS */}
+          <Route path="/Reviewer" element={<BoardReviewer />} />
+          <Route path="/Section2" element={<Section2 />} />
+          <Route path="/EmployeeId/:id" element={<EmployeeId />} />
         </Routes>
       </div>
     </div>

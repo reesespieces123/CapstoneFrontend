@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import EmployeeService from "../services/EmployeeService";
 
 import UserService from "../reducers/user.service";
-
-const BoardModerator = () => {
+import AddEmployeeComponent from "../components/AddEmployeeComponent";
+const BoardNewEmployee = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getModeratorBoard().then(
+    UserService.getUserBoard().then(
       (response) => {
         setContent(response.data);
       },
@@ -24,12 +25,10 @@ const BoardModerator = () => {
   }, []);
 
   return (
-    <div className="container">
-      <header className="jumbotron">
-        <h3>{content}</h3>
-      </header>
-    </div>
+    <>
+      <AddEmployeeComponent />
+    </>
   );
 };
 
-export default BoardModerator;
+export default BoardNewEmployee;
