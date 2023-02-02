@@ -93,7 +93,7 @@ const AddEmployeeComponent = () => {
         .then((response) => {
           console.log(response.data);
 
-          navigate("/home");
+          navigate("/success");
         })
         .catch((error) => {
           console.log(error);

@@ -24,6 +24,8 @@ import Auditor from "./pages/Auditor";
 // EMPLOYEE PAGES
 // section 1 form for employee
 import Section1 from "./EmployeeStructure/Section1";
+// after submitting - success page
+import Success from "./EmployeeStructure/Success";
 
 // REVIEWER PAGES //
 // section 2 for reviewer
@@ -146,7 +148,7 @@ const App = () => {
 
           {/* EMPLOYEE PATHS */}
           <Route path="/Section1" element={<Section1 />} />
-
+          <Route path="/Success" element={<Success />} />
           {/*REVIEWER PATHS */}
           <Route path="/Reviewer" element={<BoardReviewer />} />
           <Route path="/Section2" element={<Section2 />} />

@@ -283,58 +283,59 @@ const EmployeeId = (props) => {
                   Continue to complete {employee.first_name}(s) Section 2 Form:{" "}
                 </h5>
                 {/* /// */}
-                                    {/* <!-- CANCEL trigger modal --> */}
-                                    <button
-                      type="button"
-                      className="btn btn-success"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      SECTION 2
-                    </button>
+                {/* <!-- CANCEL trigger modal --> */}
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  SECTION 2
+                </button>
 
-                    {/* <!-- Modal --> */}
-                    <div
-                      className="modal"
-                      id="exampleModal"
-                      tabindex="-1"
-                      aria-labelledby="exampleModalLabel"
-                      aria-hidden="true"
-                      data-bs-backdrop="false"
-                      data-bs-keyboard="false"
-                    >
-                      <div className="modal-dialog">
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">
-                              ALERT
-                            </h5>
-                            <button
-                              type="button"
-                              className="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div className="modal-body">
-                            Are you sure you have reviewed {employee.first_name} I-9 Form? If yes continue to Section 2.
-                          </div>
-                          <div className="modal-footer">
-                            <button
-                              type="button"
-                              className="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Return
-                            </button>
+                {/* <!-- Modal --> */}
+                <div
+                  className="modal"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                  data-bs-backdrop="false"
+                  data-bs-keyboard="false"
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">
+                          ALERT
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        Are you sure you have reviewed {employee.first_name} I-9
+                        Form? If yes continue to Section 2.
+                      </div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-danger"
+                          data-bs-dismiss="modal"
+                        >
+                          Return
+                        </button>
 
-                            <Link to="/Section2" className="btn btn-success">
-                              Section 2
-                            </Link>
-                          </div>
-                        </div>
+                        <Link to="/Section2" className="btn btn-success">
+                          Section 2
+                        </Link>
                       </div>
                     </div>
+                  </div>
+                </div>
 
                 {/* /// */}
 
