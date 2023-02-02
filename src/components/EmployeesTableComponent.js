@@ -31,7 +31,7 @@ const EmployeesTableComponent = () => {
             <th>Last Name</th>
             <th>Address</th>
             <th>State</th>
-            <th>Zip Code</th>
+            <th>Zip Code.</th>
           </tr>
         </thead>
         <tbody>
