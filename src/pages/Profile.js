@@ -21,7 +21,7 @@ const Profile = () => {
         Click here to begin your I-9! <br />
       </p>
       <div>
-        <Link to="/NewEmployee" relative="path" className="btn btn-primary">
+        <Link to="/Section1" relative="path" className="btn btn-primary">
           Click Here
         </Link>
       </div>
@@ -32,7 +32,7 @@ const Profile = () => {
         Click here to check your form status
       </p>
       <div>
-        <Link to="/NewEmployee" relative="path" className="btn btn-primary">
+        <Link to="/Home" relative="path" className="btn btn-primary">
           Click Here
         </Link>
       </div>

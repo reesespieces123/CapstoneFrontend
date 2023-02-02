@@ -5,39 +5,28 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
-import BoardNewEmployee from "./components/BoardNewEmployee";
-import BoardReviewer from "./components/BoardReviewer";
+import Profile from "./pages/Profile";
+import Empty from "./pages/Empty";
+import BoardReviewer from "./ReviewerStructure/BoardReviewer";
 import BoardAdmin from "./components/BoardAdmin";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
-//import Landing page
-import Landing from "./pages/Landing";
-//import Home page
-// import Home from "./components/DropdownComponent";
+
 // import Auditor page
 import Auditor from "./pages/Auditor";
+
+
 // import Employee page
-import Employee from "./pages/Employee";
+import EmployeeId from "./ReviewerStructure/EmployeeId";
+import Section1 from "./EmployeeStructure/Section1";
 
-
-// import Register page
-// import Register from "./pages/Register";
-// import Form page
-import Form from "./pages/Form";
-// import Form page
-import Form2 from "./pages/Form-2";
-
-//import all reviewer strucute here
 
 // import Reviewer page
-import Reviewer from "./ReviewerStructure/Reviewer";
-import EmployeeTable from "./ReviewerStructure/EmployeeTable";
 import Section2 from "./ReviewerStructure/Section2";
 
 
@@ -90,13 +79,13 @@ const App = () => {
               </Link>
             </li>
           )}
-          {showModeratorBoard && (
+          {/* {showModeratorBoard && (
             <li className="nav-item">
               <Link to={"/Section2"} className="nav-link">
                 I-9 Section 2
               </Link>
             </li>
-          )}
+          )} */}
 
           {showAdminBoard && (
             <li className="nav-item">
@@ -108,8 +97,8 @@ const App = () => {
 
           {currentUser && (
             <li className="nav-item">
-              <Link to={"/NewEmployee"} className="nav-link">
-                New Employee
+              <Link to={"/EMPTY"} className="nav-link">
+                EMPTY PAGE
               </Link>
             </li>
           )}
@@ -147,28 +136,33 @@ const App = () => {
 
       <div className="container mt-3">
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/home" element={<Home />} />
+          {/* HOME PAGE */}
+          <Route exact path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/newemployee" element={<BoardNewEmployee />} />
-          <Route path="/reviewer" element={<BoardReviewer />} />
-          <Route path="/admin" element={<BoardAdmin />} />
+          
+          {/* ////////////////////////////////////////////////////// */}
+          <Route path="/Empty" element={<Empty />} />
+          
+          <Route path="/Admin" element={<BoardAdmin />} />
 
-          <Route exact path="/" element={<Landing />} />
+          
           <Route path="/Home1" element={<Home />} />
           <Route path="/Auditor" element={<Auditor />} />
-          <Route path="/Employee" element={<Employee />} />
-          <Route path="/Reviewer" element={<Reviewer />} />
+          
+
           {/*Register route*/}
           {/* <Route path="/Register" element={Register} /> */}
-          <Route path="/Form" element={<Form />} />
-          <Route path="/Form-2" element={<Form2 />} />
+
+          {/* EMPLOYEE STRUCTURE */}
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/Section1" element={<Section1 />} />
+
           {/*REVIEWER STRUCTURE */}
-          <Route path="/Reviewer" element={<Reviewer />} />
-          <Route path="/EmployeeTable" element={<EmployeeTable />} />
+          <Route path="/Reviewer" element={<BoardReviewer />} />
+          
           <Route path="/Section2" element={<Section2 />} />
+          <Route path="/EmployeeId/:id" element={<EmployeeId />} />
         </Routes>
       </div>
     </div>

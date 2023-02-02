@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import EmployeeService from "../services/EmployeeService";
 
 import UserService from "../reducers/user.service";
-import AddEmployeeComponent from "./AddEmployeeComponent";
+import AddEmployeeComponent from "../components/AddEmployeeComponent";
 const BoardNewEmployee = () => {
   const [content, setContent] = useState("");
 
