@@ -338,7 +338,7 @@ const AddRepresentativeComponent = () => {
                           ></textarea>
                         </div>
                       </div>
-
+<br />
                       <div className="col-md">
                         <h5 className="text-center">List C</h5>
                         <input
@@ -401,6 +401,7 @@ const AddRepresentativeComponent = () => {
                     <div className="col-md-3">
                       <input type="date" className="form-control"></input>
                     </div>
+                    <br />
                     <div className="row g-3">
                       <div className="col-md-5">
                         <input

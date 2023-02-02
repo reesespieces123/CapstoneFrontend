@@ -2,7 +2,7 @@ import axios from "axios";
 import authHeader from "../services/auth-header";
 
 const REPRESENTATIVE_BASE_REST_API_URL =
-  "http://localhost:8080/api/test";
+  "http://localhost:8080/api/test/";
 
 // class RepresentativeService {
   const getAllRepresentatives =()=> {

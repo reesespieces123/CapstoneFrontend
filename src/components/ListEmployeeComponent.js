@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { AgGridReact } from "ag-grid-react";
-import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
-import "ag-grid-community/styles/ag-theme-material.css"; // Optional theme CSS
-import "ag-grid-enterprise";
+// import { AgGridReact } from "ag-grid-react";
+// import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
+// import "ag-grid-community/styles/ag-theme-material.css"; // Optional theme CSS
+// import "ag-grid-enterprise";
 import authHeader from "../services/auth-header";
 
 const ListEmployeeComponent = () => {
@@ -22,7 +22,10 @@ const ListEmployeeComponent = () => {
   return (
     <div className="container">
       <br />
-      <h2 className="text-center"> Employee Data... </h2>
+      <h2 className="text-center">
+        {" "}
+        Welcome <strong>{currentUser.username}</strong>!
+      </h2>
       <br />
 
       <table className="table border table-hover">

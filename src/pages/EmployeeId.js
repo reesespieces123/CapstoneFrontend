@@ -1,24 +1,31 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import authHeader from "../services/auth-header";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
-const EmployeeId = (props) => {
+const EmployeeId = () => {
   const [employee, setEmployee] = useState({});
+  const { user: currentUser } = useSelector((state) => state.auth);
+  const EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/test/";
+  const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/employees/" + props.match.params.id)
+    fetch(EMPLOYEE_BASE_REST_API_URL  + ( id ), { headers: authHeader()
+    })
       .then((res) => res.json())
       .then((result) => {
         setEmployee(result);
       });
   });
 
-  // const displayEmployeeId(e){
-  // };
 
   return (
     <>
       <br />
-      <h1>&nbsp;Welcome Reviewer Name</h1>
+      <h1>
+        &nbsp;Welcome <strong>{currentUser.username}</strong>!
+      </h1>
       <h2 className="text-center">
         You are now <b>viewing</b>{" "}
         <em>
@@ -262,7 +269,7 @@ const EmployeeId = (props) => {
                     </div>
                     <div className="col">City: {employee.preparercity}</div>
                     <div className="col">State: {employee.preparerstate}</div>
-                    <div className="col">Zip Codee: {employee.preparerzip}</div>
+                    <div className="col">Zip Code: {employee.preparerzip}</div>
                   </div>
                 </div>
                 <br />

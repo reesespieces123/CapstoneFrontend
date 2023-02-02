@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -12,6 +13,7 @@ import Profile from "./components/Profile";
 import BoardNewEmployee from "./components/BoardNewEmployee";
 import BoardReviewer from "./components/BoardReviewer";
 import BoardAdmin from "./components/BoardAdmin";
+
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
@@ -28,7 +30,7 @@ import Employee from "./pages/Employee";
 // import Register page
 // import Register from "./pages/Register";
 // import Form page
-import Form from "./pages/EmployeePages/Form";
+import Form from "./pages/Form";
 // import Form page
 import Form2 from "./pages/Form-2";
 
@@ -38,6 +40,7 @@ import Form2 from "./pages/Form-2";
 import Reviewer from "./pages/ReviewerPages/Reviewer";
 import EmployeeTable from "./pages/ReviewerPages/EmployeeTable";
 import Section2 from "./pages/ReviewerPages/Section2";
+import EmployeeId from "./pages/EmployeeId";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -153,6 +156,7 @@ const App = () => {
           <Route path="/newemployee" element={<BoardNewEmployee />} />
           <Route path="/reviewer" element={<BoardReviewer />} />
           <Route path="/admin" element={<BoardAdmin />} />
+          <Route path="/EmployeeId/:id" element={<EmployeeId />} />
 
           <Route exact path="/" element={<Landing />} />
           <Route path="/Home1" element={<Home />} />
