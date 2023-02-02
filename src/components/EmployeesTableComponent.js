@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import authHeader from "../services/auth-header";
 
-const ListEmployeeComponent = () => {
+const EmployeesTableComponent = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
   const [employees, setEmployees] = useState([]);
 
@@ -18,21 +17,21 @@ const ListEmployeeComponent = () => {
   return (
     <div className="container">
       <br />
-      <h1>Reviewer Page</h1>
+      <h1>Employer Page</h1>
       <h3>Welcome {currentUser.username}</h3>
       <br />
-
-      <h2 className="text-center"> Employee Data to review... </h2>
+      <h2 className="text-center"> Employee Table </h2>
       <br />
-
+      
       <table className="table border table-hover">
         <thead>
           <tr>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Employee Email</th>
-            <th>Action(s)</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Zip Code.</th>
           </tr>
         </thead>
         <tbody>
@@ -41,11 +40,9 @@ const ListEmployeeComponent = () => {
               <td>{emp.id}</td>
               <td>{emp.first_name}</td>
               <td>{emp.last_name}</td>
-              <td>{emp.employee_email}</td>
-              <td>
-                <Link to={"/EmployeeId/" + emp.id}>INFO</Link>
-                {/* <a href={"/EmployeeId/" + emp.id} target="_blank">INFO</a> */}
-              </td>
+              <td>{emp.address}</td>
+              <td>{emp.state}</td>
+              <td>{emp.zipcode}</td>
             </tr>
           ))}
         </tbody>
@@ -54,4 +51,4 @@ const ListEmployeeComponent = () => {
   );
 };
 
-export default ListEmployeeComponent;
+export default EmployeesTableComponent;

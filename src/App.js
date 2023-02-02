@@ -2,45 +2,39 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./components/Login";
-import Register from "./components/Register";
+// Login/Register connectivity pages
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
-import BoardNewEmployee from "./components/BoardNewEmployee";
-import BoardReviewer from "./components/BoardReviewer";
-import BoardAdmin from "./components/BoardAdmin";
+import Profile from "./pages/Profile";
 
+// idk pages
+import BoardAdmin from "./components/BoardAdmin";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
-//import Landing page
-import Landing from "./pages/Landing";
-//import Home page
-// import Home from "./components/DropdownComponent";
 // import Auditor page
 import Auditor from "./pages/Auditor";
-// import Employee page
-import Employee from "./pages/Employee";
 
-// import Register page
-// import Register from "./pages/Register";
-// import Form page
-import Form from "./pages/Form";
-// import Form page
-import Form2 from "./pages/Form-2";
+// EMPLOYEE PAGES
+// section 1 form for employee
+import Section1 from "./EmployeeStructure/Section1";
+// after submitting - success page
+import Success from "./EmployeeStructure/Success";
 
-//import all reviewer strucute here
-
-// import Reviewer page
-import Reviewer from "./pages/ReviewerPages/Reviewer";
-import EmployeeTable from "./pages/ReviewerPages/EmployeeTable";
-import Section2 from "./pages/ReviewerPages/Section2";
-import EmployeeId from "./pages/EmployeeId";
+// REVIEWER PAGES //
+// section 2 for reviewer
+import Section2 from "./ReviewerStructure/Section2";
+// table
+import BoardReviewer from "./ReviewerStructure/BoardReviewer";
+// renders each employee id to its own page
+import EmployeeId from "./ReviewerStructure/EmployeeId";
+// list of employers table
+import EmployeesTableComponent from "./components/EmployeesTableComponent";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -91,13 +85,6 @@ const App = () => {
               </Link>
             </li>
           )}
-          {showModeratorBoard && (
-            <li className="nav-item">
-              <Link to={"/Section2"} className="nav-link">
-                I-9 Section 2
-              </Link>
-            </li>
-          )}
 
           {showAdminBoard && (
             <li className="nav-item">
@@ -107,10 +94,10 @@ const App = () => {
             </li>
           )}
 
-          {currentUser && (
+          {showModeratorBoard && (
             <li className="nav-item">
-              <Link to={"/NewEmployee"} className="nav-link">
-                New Employee
+              <Link to={"/EmployeeTable"} className="nav-link">
+                Employees Board
               </Link>
             </li>
           )}
@@ -148,29 +135,25 @@ const App = () => {
 
       <div className="container mt-3">
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/home" element={<Home />} />
+          {/* HOME PAGE */}
+          <Route exact path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/newemployee" element={<BoardNewEmployee />} />
-          <Route path="/reviewer" element={<BoardReviewer />} />
-          <Route path="/admin" element={<BoardAdmin />} />
-          <Route path="/EmployeeId/:id" element={<EmployeeId />} />
+          {/* IDK PAGES */}
+          <Route path="/Admin" element={<BoardAdmin />} />
 
-          <Route exact path="/" element={<Landing />} />
-          <Route path="/Home1" element={<Home />} />
+          {/* AUDITOR PATHS */}
           <Route path="/Auditor" element={<Auditor />} />
-          <Route path="/Employee" element={<Employee />} />
-          <Route path="/Reviewer" element={<Reviewer />} />
-          {/*Register route*/}
-          {/* <Route path="/Register" element={Register} /> */}
-          <Route path="/Form" element={<Form />} />
-          <Route path="/Form-2" element={<Form2 />} />
-          {/*REVIEWER STRUCTURE */}
-          <Route path="/Reviewer" element={<Reviewer />} />
-          <Route path="/EmployeeTable" element={<EmployeeTable />} />
+
+          {/* EMPLOYEE PATHS */}
+          <Route path="/Section1" element={<Section1 />} />
+          <Route path="/Success" element={<Success />} />
+          {/*REVIEWER PATHS */}
+          <Route path="/Reviewer" element={<BoardReviewer />} />
           <Route path="/Section2" element={<Section2 />} />
+          <Route path="/EmployeeId/:id" element={<EmployeeId />} />
+          <Route path="/EmployeeTable" element={<EmployeesTableComponent />} />
         </Routes>
       </div>
     </div>
