@@ -39,7 +39,7 @@ const ListEmployeeComponent = () => {
               <td>{emp.last_name}</td>
               <td>{emp.employee_email}</td>
               <td>
-                <Link to={"/EmployeeId/" + emp.id} target="_blank">
+                <Link to={"/EmployeeId/" + emp.id}>
                   INFO
                 </Link>
                 {/* <a href={"/EmployeeId/" + emp.id} target="_blank">INFO</a> */}

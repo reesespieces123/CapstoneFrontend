@@ -752,8 +752,67 @@ const AddEmployeeComponent = () => {
                   </div>
                 </div>
                 <br />
+                {/* ////////////// */}
                 <div className="row">
                   <div className="col offset-md-3">
+                    {/* <!-- CANCEL trigger modal --> */}
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      CANCEL
+                    </button>
+
+                    {/* <!-- Modal --> */}
+                    <div
+                      className="modal"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                      data-bs-backdrop="false"
+                      data-bs-keyboard="false"
+                    >
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
+                              ALERT
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            Are you sure you want to cancel? This will result in
+                            your data not being submitted or saved.
+                          </div>
+                          <div className="modal-footer">
+                            <button
+                              type="button"
+                              className="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Cancel
+                            </button>
+
+                            <Link to="/reviewer" className="btn btn-success">
+                              Continue
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ////////////////////// */}
+
+                  <div className="col offset-md">
                     {/* <!-- SUBMIT trigger modal --> */}
                     <button
                       type="button"
@@ -763,7 +822,6 @@ const AddEmployeeComponent = () => {
                     >
                       SUBMIT
                     </button>
-             
 
                     {/* <!-- Modal --> */}
                     <div
@@ -817,69 +875,11 @@ const AddEmployeeComponent = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col offset-md">
-                    {/* <!-- CANCEL trigger modal --> */}
-                    <button
-                      type="button"
-                      className="btn btn-danger"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      CANCEL
-                    </button>
-
-                    {/* <!-- Modal --> */}
-                    <div
-                      className="modal"
-                      id="exampleModal"
-                      tabindex="-1"
-                      aria-labelledby="exampleModalLabel"
-                      aria-hidden="true"
-                      data-bs-backdrop="false"
-                      data-bs-keyboard="false"
-                    >
-                      <div className="modal-dialog">
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">
-                              ALERT
-                            </h5>
-                            <button
-                              type="button"
-                              className="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div className="modal-body">
-                            Are you sure you want to cancel? This will result in
-                            your data not being submitted or saved.
-                          </div>
-                          <div className="modal-footer">
-                            <button
-                              type="button"
-                              className="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Cancel
-                            </button>
-
-                            <Link to="/Profile" className="btn btn-success">
-                              Continue
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                {/* /////////////////////////////// */}
-                {/*  */}
+                {/*  ////////////////////////*/}
               </form>
               <br />
-            
             </div>
-            
 
             {/* </div> */}
           </div>

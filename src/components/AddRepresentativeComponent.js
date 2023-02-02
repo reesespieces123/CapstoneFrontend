@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import RepresentativeService from "../services/RepresentativeService";
 import i9Instructions from "../components/i9Instructions.pdf";
+import EmployeeId from "../ReviewerStructure/EmployeeId";
 // import { Navigate } from "react-router-dom";
 // import { useSelector } from "react-redux";
 // import { Link } from "react-router-dom";
@@ -504,72 +505,8 @@ const AddRepresentativeComponent = () => {
                     </div>
                     <br />
                     {/* ////////////// */}
-
                     <div className="row">
                       <div className="col offset-md-3">
-                        {/* <!-- SUBMIT trigger modal --> */}
-                        <button
-                          type="button"
-                          className="btn btn-success"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop"
-                        >
-                          SUBMIT
-                        </button>
-
-                        {/* <!-- Modal --> */}
-                        <div
-                          className="modal"
-                          tabindex="-1"
-                          role="dialog"
-                          aria-labelledby="staticBackdropLabel"
-                          aria-hidden="true"
-                          id="staticBackdrop"
-                          data-bs-backdrop="static"
-                          data-bs-keyboard="false"
-                        >
-                          <div className="modal-dialog">
-                            <div className="modal-content">
-                              <div className="modal-header">
-                                <h5
-                                  className="modal-title"
-                                  id="staticBackdropLabel"
-                                >
-                                  ALERT
-                                </h5>
-                                <button
-                                  type="button"
-                                  className="btn-close"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"
-                                ></button>
-                              </div>
-                              <div className="modal-body">
-                                Please ensure that all information is entered
-                                correctly!
-                              </div>
-                              <div className="modal-footer">
-                                <button
-                                  type="button"
-                                  className="btn btn-danger"
-                                  data-bs-dismiss="modal"
-                                >
-                                  Return
-                                </button>
-                                <button
-                                  type="submit"
-                                  className="btn btn-success"
-                                  onClick={(e) => saveOrUpdateRepresentative(e)}
-                                  data-bs-dismiss="modal"
-                                >
-                                  Submit
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col offset-md">
                         {/* <!-- CANCEL trigger modal --> */}
                         <button
                           type="button"
@@ -620,7 +557,10 @@ const AddRepresentativeComponent = () => {
                                   Cancel
                                 </button>
 
-                                <Link to="/reviewer" className="btn btn-success">
+                                <Link
+                                  to="/reviewer"
+                                  className="btn btn-success"
+                                >
                                   Continue
                                 </Link>
                               </div>
@@ -628,6 +568,74 @@ const AddRepresentativeComponent = () => {
                           </div>
                         </div>
                       </div>
+
+                      {/* ////////////////////// */}
+
+                      <div className="col offset-md">
+                        {/* <!-- SUBMIT trigger modal --> */}
+                        <button
+                          type="button"
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop"
+                        >
+                          SUBMIT
+                        </button>
+
+                        {/* <!-- Modal --> */}
+                        <div
+                          className="modal"
+                          tabindex="-1"
+                          role="dialog"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                          id="staticBackdrop"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                        >
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5
+                                  className="modal-title"
+                                  id="staticBackdropLabel"
+                                >
+                                  ALERT
+                                </h5>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div className="modal-body">
+                                Are you sure you are done reviewing this I-9 Form? If you are submit this form
+                              </div>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Return
+                                </button>
+                                <button
+                                  type="submit"
+                                  className="btn btn-success"
+                                  onClick={(e) => saveOrUpdateRepresentative(e)}
+                                  data-bs-dismiss="modal"
+                                >
+                                  Submit
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* ////////////////////////////////////////////// */}
+
+                      {/*  */}
                     </div>
 
                     {/* ///////////////////////// */}
