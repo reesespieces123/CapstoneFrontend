@@ -5,30 +5,33 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+// Login/Register connectivity pages
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./components/Home";
 import Profile from "./pages/Profile";
+
+// idk pages
 import Empty from "./pages/Empty";
-import BoardReviewer from "./ReviewerStructure/BoardReviewer";
 import BoardAdmin from "./components/BoardAdmin";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
-
 // import Auditor page
 import Auditor from "./pages/Auditor";
 
-
-// import Employee page
-import EmployeeId from "./ReviewerStructure/EmployeeId";
+// EMPLOYEE PAGES
+// section 1 form for employee
 import Section1 from "./EmployeeStructure/Section1";
 
-
-// import Reviewer page
+// REVIEWER PAGES //
+// section 2 for reviewer
 import Section2 from "./ReviewerStructure/Section2";
-
+// table
+import BoardReviewer from "./ReviewerStructure/BoardReviewer";
+// renders each employee id to its own page
+import EmployeeId from "./ReviewerStructure/EmployeeId";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -79,13 +82,6 @@ const App = () => {
               </Link>
             </li>
           )}
-          {/* {showModeratorBoard && (
-            <li className="nav-item">
-              <Link to={"/Section2"} className="nav-link">
-                I-9 Section 2
-              </Link>
-            </li>
-          )} */}
 
           {showAdminBoard && (
             <li className="nav-item">
@@ -140,27 +136,19 @@ const App = () => {
           <Route exact path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          
-          {/* ////////////////////////////////////////////////////// */}
+          <Route path="/profile" element={<Profile />} />
+          {/* IDK PAGES */}
           <Route path="/Empty" element={<Empty />} />
-          
           <Route path="/Admin" element={<BoardAdmin />} />
 
-          
-          <Route path="/Home1" element={<Home />} />
+          {/* AUDITOR PATHS */}
           <Route path="/Auditor" element={<Auditor />} />
-          
 
-          {/*Register route*/}
-          {/* <Route path="/Register" element={Register} /> */}
-
-          {/* EMPLOYEE STRUCTURE */}
-          <Route path="/profile" element={<Profile />} />
+          {/* EMPLOYEE PATHS */}
           <Route path="/Section1" element={<Section1 />} />
 
-          {/*REVIEWER STRUCTURE */}
+          {/*REVIEWER PATHS */}
           <Route path="/Reviewer" element={<BoardReviewer />} />
-          
           <Route path="/Section2" element={<Section2 />} />
           <Route path="/EmployeeId/:id" element={<EmployeeId />} />
         </Routes>
