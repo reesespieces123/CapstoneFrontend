@@ -18,9 +18,13 @@ const ListEmployeeComponent = () => {
   return (
     <div className="container">
       <br />
+      <h1>Reviewer Page</h1>
+      <h3>Welcome {currentUser.username}</h3>
+      <br />
+
       <h2 className="text-center"> Employee Data to review... </h2>
       <br />
-      
+
       <table className="table border table-hover">
         <thead>
           <tr>
@@ -39,11 +43,9 @@ const ListEmployeeComponent = () => {
               <td>{emp.last_name}</td>
               <td>{emp.employee_email}</td>
               <td>
-                <Link to={"/EmployeeId/" + emp.id}>
-                  INFO
-                </Link>
+                <Link to={"/EmployeeId/" + emp.id}>INFO</Link>
                 {/* <a href={"/EmployeeId/" + emp.id} target="_blank">INFO</a> */}
-       </td>
+              </td>
             </tr>
           ))}
         </tbody>

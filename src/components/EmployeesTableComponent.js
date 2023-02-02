@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import authHeader from "../services/auth-header";
 
@@ -18,7 +17,10 @@ const EmployeesTableComponent = () => {
   return (
     <div className="container">
       <br />
-      <h2 className="text-center"> Employees... </h2>
+      <h1>Employer Page</h1>
+      <h3>Welcome {currentUser.username}</h3>
+      <br />
+      <h2 className="text-center"> Employee Table </h2>
       <br />
       
       <table className="table border table-hover">
@@ -41,12 +43,6 @@ const EmployeesTableComponent = () => {
               <td>{emp.address}</td>
               <td>{emp.state}</td>
               <td>{emp.zipcode}</td>
-              <td>
-                {/* <Link to={"/EmployeeId/" + emp.id}>
-                  INFO
-                </Link> */}
-                {/* <a href={"/EmployeeId/" + emp.id} target="_blank">INFO</a> */}
-       </td>
             </tr>
           ))}
         </tbody>
