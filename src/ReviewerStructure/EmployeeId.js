@@ -46,7 +46,7 @@ const EmployeeId = (props) => {
                 <div className="row">
                   <h5 className="text-center">I-9 Section 1</h5>
 
-                  <div className="paragraphs">
+                   <div className="paragraphs">
                     {" "}
                     <br />{" "}
                     <p className="paragraphs">
@@ -68,7 +68,7 @@ const EmployeeId = (props) => {
                       future expiration date may also constitute illegal
                       discrimination.{" "}
                     </p>
-                  </div>
+                  </div> 
                   <div className="col">
                     <label className="">
                       Last Name (Family Name): {employee.last_name}
@@ -141,7 +141,7 @@ const EmployeeId = (props) => {
                 <br />
                 {/* citizen part */}
                 <div className="row">
-                  <p className="paragraphs-2">
+                   <p className="paragraphs-2">
                     <b>
                       I am aware that federal law provides for imprisonment
                       and/or fines for false statements or use of false
@@ -153,37 +153,12 @@ const EmployeeId = (props) => {
                       I attest, under penalty of perjury, that I am (check one
                       of the following boxes):
                     </b>
-                  </p>
+                  </p> 
                   <div className="row">
                     <label htmlFor="">Citizenship Status: </label>
-                    <li>o A citizen of the United States{employee.citizen}</li>
-                    <li>
-                      o A noncitizen national of the United States(See
-                      instructions){employee.noncitizennational}
-                    </li>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <li>
-                        o A lawful permanent resident{" "}
-                        {employee.lawfulpermanentresident}
-                      </li>
-                      <p className="small-text">
-                        (Alien Authorization Number/USCIS Number):
-                      </p>
-                    </div>
-                    <div className="col">
-                      {employee.alienauthorizationnumber}
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col">
-                      <li>
-                        o An alien authorized to work until:
-                        {employee.authorizedalien}
-                      </li>
-                    </div>
+                    <li>{employee.citizenshipstatus}</li>
+                    
+                    <br/><br/>
                     <div className="col">
                       Expiration date: {employee.expirationdate}
                     </div>

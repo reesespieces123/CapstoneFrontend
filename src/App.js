@@ -12,7 +12,6 @@ import Home from "./components/Home";
 import Profile from "./pages/Profile";
 
 // idk pages
-import Empty from "./pages/Empty";
 import BoardAdmin from "./components/BoardAdmin";
 
 import { logout } from "./actions/auth";
@@ -34,6 +33,8 @@ import Section2 from "./ReviewerStructure/Section2";
 import BoardReviewer from "./ReviewerStructure/BoardReviewer";
 // renders each employee id to its own page
 import EmployeeId from "./ReviewerStructure/EmployeeId";
+// list of employers table
+import EmployeesTableComponent from "./components/EmployeesTableComponent";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -93,10 +94,10 @@ const App = () => {
             </li>
           )}
 
-          {currentUser && (
+          {showModeratorBoard && (
             <li className="nav-item">
-              <Link to={"/EMPTY"} className="nav-link">
-                EMPTY PAGE
+              <Link to={"/EmployeeTable"} className="nav-link">
+                Employees Board
               </Link>
             </li>
           )}
@@ -140,7 +141,6 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           {/* IDK PAGES */}
-          <Route path="/Empty" element={<Empty />} />
           <Route path="/Admin" element={<BoardAdmin />} />
 
           {/* AUDITOR PATHS */}
@@ -153,6 +153,7 @@ const App = () => {
           <Route path="/Reviewer" element={<BoardReviewer />} />
           <Route path="/Section2" element={<Section2 />} />
           <Route path="/EmployeeId/:id" element={<EmployeeId />} />
+          <Route path="/EmployeeTable" element={<EmployeesTableComponent />} />
         </Routes>
       </div>
     </div>
