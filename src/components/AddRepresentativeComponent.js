@@ -161,8 +161,7 @@ const title = () => {
     );
   };
   return (
-    <>
-      <div>
+  <>     
         <div className="container-max-width: 1519px">
           <div className="row">
             <br />
@@ -186,6 +185,7 @@ const title = () => {
                 </b>{" "}
               </div>
               {/* FORM STARTS HERE */}
+          <form className="container">
               {/* START OF DIV ROW */}
               {/* FIRST COL */}
               <div>
@@ -193,7 +193,7 @@ const title = () => {
                 <input
                   type="text"
                   placeholder="Document Title"
-                  name="document_title_a1"
+                  name="documenttitle_a1"
                   className="form-control"
                   value={documenttitle_a1}
                   onChange={(e) => setdocumenttitle_a1(e.target.value)}
@@ -229,7 +229,7 @@ const title = () => {
                 <input
                   type="text"
                   placeholder="Document Title"
-                  name="document_title_a2"
+                  name="documenttitle_a2"
                   className="form-control"
                   value={documenttitle_a2}
                   onChange={(e) => setdocumenttitle_a2(e.target.value)}
@@ -295,7 +295,8 @@ const title = () => {
                   onChange={(e) => setexpirationdate_a3(e.target.value)}
                 ></input>{" "}
               </div>{" "}
-            </div>{" "}
+            </form>
+            
             <div className="vr"></div>{" "}
             <div className="col-md">
               {" "}
@@ -637,14 +638,22 @@ const title = () => {
                   </div>
                 </div>
               </div>
+              
             </div>
+            
             {/* ////////////////////////////////////////////// */}
-
-            {/*  */}
-          </div>
-          {/* ///////////////////////// */}
         </div>
+       
+       
+            {/*  */}
+          
+          {/* ///////////////////////// */}
+        
         <br />
+        
+      
+      </div>
+      
       </div>
     </>
   );

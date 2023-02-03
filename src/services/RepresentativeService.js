@@ -5,39 +5,36 @@ const REPRESENTATIVE_BASE_REST_API_URL =
   "http://localhost:8080/api/testrep";
 
 // class RepresentativeService {
-  const getAllRepresentatives =()=> {
+  const getAllRepresentative =()=> {
     return axios.get(
-      REPRESENTATIVE_BASE_REST_API_URL + "/" + "representative",{headers: authHeader()});
+      REPRESENTATIVE_BASE_REST_API_URL + "/representative" ,{headers: authHeader()});
   }
 
   const createRepresentative=(representative)=> {
-    return axios.post(REPRESENTATIVE_BASE_REST_API_URL, representative);
+    return axios.post(REPRESENTATIVE_BASE_REST_API_URL);
   }
 
   const getRepresentativeById=(representativeId)=> {
-    return axios.get(
-      REPRESENTATIVE_BASE_REST_API_URL +  representativeId,
-      {headers: authHeader(),
-      }
-    );
+    return axios.get(REPRESENTATIVE_BASE_REST_API_URL +  representativeId ,{headers: authHeader(),
+      });
   }
 
   const updateRepresentative=(representativeId, representative)=> {
     return axios.put(
-      REPRESENTATIVE_BASE_REST_API_URL + "/" + representativeId,
-      representative
+      REPRESENTATIVE_BASE_REST_API_URL + "/" + "representativeId",
+      "representative"
     );
   }
 
  const deleterepresentative=(representativeId)=> {
     return axios.delete(
-      REPRESENTATIVE_BASE_REST_API_URL + "/" + representativeId
+      REPRESENTATIVE_BASE_REST_API_URL + "/" + "representativeId"
     );
   }
 // }
 
 export default {
-  getAllRepresentatives,
+  getAllRepresentative,
   deleterepresentative,
   createRepresentative,
   updateRepresentative,
