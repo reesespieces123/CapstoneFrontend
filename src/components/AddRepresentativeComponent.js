@@ -142,7 +142,7 @@ const AddRepresentativeComponent = () => {
                       </a>{" "}
                       )
                     </b>{" "}
-                  </p>{" "}
+                 </div>
                   {/* FORM STARTS HERE */}
                     {/* START OF DIV ROW */}
                     {/* FIRST COL */}
@@ -365,7 +365,7 @@ const AddRepresentativeComponent = () => {
                         <input type="date" class="form-control"></input>{" "}
                       </div>{" "}
                     </p>{" "}
-                    <form class="row g-3">
+                    <div class="row g-3">
                       {" "}
                       <div class="col-md-5">
                         {" "}
@@ -617,13 +617,10 @@ const AddRepresentativeComponent = () => {
                   </div>
                   <br />
                 </div>
-              </div>
-            </div>
-          </div>
+              
+              </form>
+           )
+                      }
           <br />
-        </div>
-      </div>
-    </form>
-  );
-};
+
 export default AddRepresentativeComponent;
