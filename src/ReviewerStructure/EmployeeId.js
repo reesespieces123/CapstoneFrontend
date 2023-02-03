@@ -20,8 +20,6 @@ const EmployeeId = (props) => {
       });
   });
 
-  // const displayEmployeeId(e){
-  // };
 
   return (
     <>
