@@ -1,52 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
 import RepresentativeService from "../services/RepresentativeService";
 import i9Instructions from "../components/i9Instructions.pdf";
-import EmployeeId from "../ReviewerStructure/EmployeeId";
-// import { Navigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
-
 const AddRepresentativeComponent = () => {
   const [representative, setRepresentative] = useState({
-    DocumentTitle_A1: "",
-    IssuingAuthority_A1: "",
-    DocumentNumber_A1: "",
-    ExpirationDate_A1: "",
-    DocumentTitle_A2: "",
-    IssuingAuthority_A2: "",
-    DocumentNumber_A2: "",
-    ExpirationDate_A2: "",
-    DocumentTitle_A3: "",
-    IssuingAuthority_A3: "",
-    DocumentNumber_A3: "",
-    ExpirationDate_A3: "",
-    Document_Title_B: "",
-    IssuingAuthority_B: "",
-    DocumentNumber_B: "",
-    ExpirationDate_B: "",
-    AdditionalInfo_B: "",
-
-    DocumentTitle_C: "",
-    IssuingAuthority_C: "",
-    DocumentNumber_C: "",
-    ExpirationDate_C: "",
-    RepresentativeSignature: "",
-    RepresentativeSignDate: "",
-    PreparerSignatureDate: "",
-    RepresentativeTitle: "",
-    RepresentativeFirstName: "",
-    RepresentativeLastName: "",
-    OrganizationName: "",
-    OrganizationAddress: "",
-    OrganizationCity: "",
-    OrganizationState: "",
-    OrganizationZipCode: "",
+    documenttitlea1: "",
+    issuingauthority_a1: "",
+    documentnumber_a1: "",
+    expirationdate_a1: "",
+    document_title_a2: "",
+    issuingauthority_a2: "",
+    documentnumber_a2: "",
+    expirationdate_a2: "",
+    documenttitle_a3: "",
+    issuingauthority_a3: "",
+    documentnumber_a3: "",
+    expirationdate_a3: "",
+    documenttitle_b: "",
+    issuingauthority_b: "",
+    documentnumber_b: "",
+    expirationdate_b: "",
+    additionalinfo_b: "",
+    documenttitle_c: "",
+    issuingauthority_c: "",
+    documentnumber_c: "",
+    expirationdate_c: "",
+    representativesignature: "",
+    representativesigndate: "",
+    representativetitle: "",
+    representativefirstname: "",
+    representativelastname: "",
+    organizationname: "",
+    organizationaddress: "",
+    organizationcity: "",
+    organizationstate: "",
+    organizationzipcode: "",
   });
-
-  const history = useNavigate();
   const { id } = useParams();
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     if (event.target.type === "radio") {
@@ -55,10 +44,8 @@ const AddRepresentativeComponent = () => {
       setRepresentative({ ...representative, [name]: value });
     }
   };
-
   const saveOrUpdateRepresentative = (e) => {
     e.preventDefault();
-
     if (id) {
       RepresentativeService.updateRepresentative(id, representative)
         .then((response) => {
@@ -70,68 +57,61 @@ const AddRepresentativeComponent = () => {
     } else {
       RepresentativeService.createRepresentative(representative)
         .then((response) => {
-          history.push("/reviewer");
+          history.push("/representative");
         })
         .catch((error) => {
           console.log(error);
         });
     }
   };
-
   useEffect(() => {
     if (id) {
       RepresentativeService.getRepresentativeById(id)
         .then((response) => {
           setRepresentative({
-            DocumentTitle_A1: response.data.DocumentTitle_A1,
-            IssuingAuthority_A1: response.data.IssuingAuthority_A1,
-            DocumentNumber_A1: response.data.DocumentNumber_A1,
-            ExpirationDate_A1: response.data.ExpirationDate_A1,
-            DocumentTitle_A2: response.data.DocumentTitle_A2,
-
-            IssuingAuthority_A2: response.data.IssuingAuthority_A2,
-            DocumentNumber_A2: response.data.DocumentNumber_A2,
-            ExpirationDate_A2: response.data.ExpirationDate_A2,
-            DocumentTitle_A3: response.data.DocumentTitle_A3,
-            IssuingAuthority_A3: response.data.IssuingAuthority_A3,
-            DocumentNumber_A3: response.data.DocumentNumber_A3,
-            ExpirationDate_A3: response.data.ExpirationDate_A3,
-            DocumentTitle_B: response.data.DocumentTitle_B,
-            IssuingAuthority_B: response.data.IssuingAuthority_B,
-            DocumentNumber_B: response.data.DocumentNumber_B,
-            ExpirationDate_B: response.data.ExpirationDate_B,
-            AdditionalInfo_B: response.data.AdditionalInfo_B,
-            DocumentTitle_C: response.data.DocumentTitle_C,
-            IssuingAuthority_C: response.data.IssuingAuthority_C,
-            DocumentNumber_C: response.data.DocumentNumber_C,
-            ExpirationDate_C: response.data.ExpirationDate_C,
-            RepresentativeSignature: response.data.RepresentativeSignature,
-            RepresentativeSignDate: response.data.RepresentativeSignDate,
-            RepresentativeTitle: response.data.RepresentativeTitle,
-            RepresentativeFirstName: response.data.RepresentativeFirstName,
-            RepresentativeLastName: response.data.RepresentativeLastName,
-            OrganizationName: response.data.OrganizationName,
-            OrganizationAddress: response.data.OrganizationAddress,
-            OrganizationCity: response.data.OrganizationCity,
-            OrganizationState: response.data.OrganizationState,
-            OrganizationZipCode: response.data.OrganizationZipCode,
+            document_titlea1: response.data.document_titlea1,
+            issuingauthority_a1: response.data.issuingauthority_a1,
+            documentnumber_a1: response.data.documentnumber_a1,
+            expirationdate_a1: response.data.expirationdate_a1,
+            document_title_a2: response.data.document_title_a2,
+            issuingauthority_a2: response.data.issuingauthority_a2,
+            documentnumber_a2: response.data.documentnumber_a2,
+            expirationdate_a2: response.data.expirationdate_a2,
+            documenttitle_a3: response.data.documenttitle_a3,
+            issuingauthority_a3: response.data.issuingauthority_a3,
+            documentnumber_a3: response.data.documentnumber_a3,
+            expirationdate_a3: response.data.expirationdate_a3,
+            documenttitle_b: response.data.documenttitle_b,
+            issuingauthority_b: response.data.issuingauthority_b,
+            documentnumber_b: response.data.documentnumber_b,
+            expirationdate_b: response.data.expirationdate_b,
+            additionalinfo_b: response.data.additionalinfo_b,
+            documenttitle_c: response.data.documenttitle_c,
+            issuingauthority_c: response.data.issuingauthority_c,
+            documentnumber_c: response.data.documentnumber_c,
+            expirationdate_c: response.data.expirationdate_c,
+            representativesignature: response.data.representativesignature,
+            representativesigndate: response.data.representativesigndate,
+            representativetitle: response.data.representativetitle,
+            representativefirstname: response.data.representativefirstname,
+            representativelastname: response.data.representativelastname,
+            organizationname: response.data.organizationname,
+            organizationaddress: response.data.organizationaddress,
+            organizationcity: response.data.organizationcity,
+            organizationstate: response.data.organizationstate,
+            organizationzipcode: response.data.organizationzipcode,
           });
         })
-
         .catch((error) => {
           console.log(error);
         });
     }
   }, []);
-
   const title = () => {
     if (id) {
-      return <h2 className="text-center">Update Employee</h2>;
     } else {
-      return <h2 className="text-center">I-9 Section 2</h2>;
     }
   };
-
   return (
     <form
       onSubmit={(e) => {
@@ -141,7 +121,6 @@ const AddRepresentativeComponent = () => {
     >
       <div>
         <div className="container-max-width: 1519px">
-          <div className="container">
             <div className="row">
               <br />
               <br />
@@ -149,8 +128,6 @@ const AddRepresentativeComponent = () => {
               <div className="card col-lg-12">
                 {title()}
                 <div className="container">
-                  <br />
-                  <p className="paragraphs">
                     <b>
                       Employer or Authorized Representative Review and
                       Verification (Employers or their authorized representative
@@ -162,343 +139,341 @@ const AddRepresentativeComponent = () => {
                       <a href={i9Instructions} target="_blank">
                         {" "}
                         List of Acceptable Documents.
-                      </a>
+                      </a>{" "}
                       )
-                    </b>
-                  </p>
-
+                    </b>{" "}
+                  </p>{" "}
                   {/* FORM STARTS HERE */}
-                  <div className="container">
                     {/* START OF DIV ROW */}
-
                     {/* FIRST COL */}
-                    <div className="row">
-                      <div className="col-md">
-                        <h5 className="text-center">List A</h5>
                         <div>
+                          {" "}
                           <input
                             type="text"
                             placeholder="Document Title"
-                            name="DocumentTitle_A1"
-                            className="form-control"
-                            value={representative.DocumentTitle_A1}
+                            name="document_title_a1"
+                            class="form-control"
+                            value={representative.document_title_a1}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="text"
                             placeholder="Issuing Authority"
-                            name="IssuingAuthority_A1"
-                            className="form-control"
-                            value={representative.IssuingAuthority_A1}
+                            name="issuingauthority_a1"
+                            class="form-control"
+                            value={representative.issuingauthority_a1}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="text"
                             placeholder="Document Number"
-                            name="DocumentNumber_A1"
-                            className="form-control"
-                            value={representative.DocumentNumber_A1}
+                            name="documentnumber_a1"
+                            class="form-control"
+                            value={representative.documentnumber_a1}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="date"
                             placeholder="Expiration Date"
-                            name="ExpirationDate_A1"
-                            className="form-control"
-                            value={representative.ExpirationDate_A1}
+                            name="expirationdate_a1"
+                            class="form-control"
+                            value={representative.expirationdate_a1}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-                        </div>
-                        <br></br>
+                          ></input>{" "}
+                        </div>{" "}
+                        <br></br>{" "}
                         <div>
+                          {" "}
                           <input
                             type="text"
                             placeholder="Document Title"
-                            name="DocumentTitle_A2"
-                            className="form-control"
-                            value={representative.DocumentTitle_A2}
+                            name="document_title_a2"
+                            class="form-control"
+                            value={representative.document_title_a2}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="text"
                             placeholder="Issuing Authority"
-                            name="IssuingAuthority_A2"
-                            className="form-control"
-                            value={representative.IssuingAuthority_A2}
+                            name="issuingauthority_a2"
+                            class="form-control"
+                            value={representative.issuingauthority_a2}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="text"
                             placeholder="Document Number"
-                            name="DocumentNumber_A2"
-                            className="form-control"
-                            value={representative.DocumentNumber_A2}
+                            name="documentnumber_a2"
+                            class="form-control"
+                            value={representative.documentnumber_a2}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="date"
                             placeholder="Expiration Date"
-                            name="ExpirationDate_A2"
-                            className="form-control"
-                            value={representative.ExpirationDate_A2}
+                            name="expirationdate_a2"
+                            class="form-control"
+                            value={representative.expirationdate_a2}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-                        </div>
-                        <br></br>
+                          ></input>{" "}
+                        </div>{" "}
+                        <br></br>{" "}
                         <div>
+                          {" "}
                           <input
                             type="text"
                             placeholder="Document Title"
-                            name="DocumentTitle_A3"
-                            className="form-control"
-                            value={representative.DocumentTitle_A3}
+                            name="documenttitle_a3"
+                            class="form-control"
+                            value={representative.documenttitle_a3}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="text"
                             placeholder="Issuing Authority"
-                            name="IssuingAuthority_A3"
-                            className="form-control"
-                            value={representative.IssuingAuthority_A3}
+                            name="issuingauthority_a3"
+                            class="form-control"
+                            value={representative.issuingauthority_a3}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="text"
                             placeholder="Document Number"
-                            name="DocumentNumber_A3"
-                            className="form-control"
-                            value={representative.DocumentNumber_A3}
+                            name="documentnumber_a3"
+                            class="form-control"
+                            value={representative.documentnumber_a3}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-
+                          ></input>{" "}
                           <input
                             type="date"
                             placeholder="Expiration Date"
-                            name="ExpirationDate_A3"
-                            className="form-control"
-                            value={representative.ExpirationDate_A3}
+                            name="expirationdate_a3"
+                            class="form-control"
+                            value={representative.expirationdate_a3}
                             onChange={(e) => handleInputChange(e)}
-                          ></input>
-                        </div>
-                      </div>
-                      <div className="vr"></div>
-                      <div className="col-md">
-                        <h5 className="text-center">List B</h5>
+                          ></input>{" "}
+                        </div>{" "}
+                      </div>{" "}
+                      <div class="vr"></div>{" "}
+                      <div class="col-md">
+                        {" "}
+                        <h5 class="text-center">List B</h5>{" "}
                         <input
                           type="text"
                           placeholder="Document Title"
-                          name="DocumentTitle_B"
-                          className="form-control"
-                          value={representative.DocumentTitle_B}
+                          name="documenttitle_b"
+                          class="form-control"
+                          value={representative.documenttitle_b}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-
+                        ></input>{" "}
                         <input
                           type="text"
-                          name="IssuingAuthority_B"
+                          name="issuingauthority_b"
                           placeholder="Issuing Authority"
-                          className="form-control"
-                          value={representative.IssuingAuthority_B}
+                          class="form-control"
+                          value={representative.issuingauthority_b}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-
+                        ></input>{" "}
                         <input
                           type="text"
                           placeholder="Document Number"
-                          name="DocumentNumber_B"
-                          className="form-control"
-                          value={representative.DocumentNumber_B}
+                          name="documentnumber_b"
+                          class="form-control"
+                          value={representative.documentnumber_b}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-
+                        ></input>{" "}
                         <input
                           type="date"
                           placeholder="Expiration Date"
-                          name="ExpirationDate_B"
-                          className="form-control"
-                          value={representative.ExpirationDate_B}
+                          name="expirationdate_b"
+                          class="form-control"
+                          value={representative.expirationdate_b}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                        <div className="form-group">
-                          <label htmlFor="comment">
+                        ></input>{" "}
+                        <div class="form-group">
+                          {" "}
+                          <label for="comment">
                             Additional Information:
-                          </label>
+                          </label>{" "}
                           <textarea
-                            className="form-control"
+                            class="form-control"
                             rows="5"
-                            id="AdditionalInfo_B"
-                          ></textarea>
-                        </div>
-                      </div>
-
-                      <div className="col-md">
-                        <h5 className="text-center">List C</h5>
+                            id=" additionalinfo_b"
+                          ></textarea>{" "}
+                        </div>{" "}
+                      </div>{" "}
+                      <div class="col-md">
+                        {" "}
+                        <h5 class="text-center">List C</h5>{" "}
                         <input
                           type="text"
                           placeholder="Document Title"
-                          name="DocumentTitle_C"
-                          className="form-control"
-                          value={representative.DocumentTitle_C}
+                          name="documenttitle_c"
+                          class="form-control"
+                          value={representative.documenttitle_c}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-
+                        ></input>{" "}
                         <input
                           type="text"
                           placeholder="Issuing Authority"
-                          name="IssuingAuthority_C"
-                          className="form-control"
-                          value={representative.IssuingAuthority_C}
+                          name="issuingauthority_c"
+                          class="form-control"
+                          value={representative.issuingauthority_c}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-
+                        ></input>{" "}
                         <input
                           type="text"
                           placeholder="Document Number"
-                          name="DocumentNumber_C"
-                          className="form-control"
-                          value={representative.DocumentNumber_C}
+                          name="documentnumber_c"
+                          class="form-control"
+                          value={representative.documentnumber_c}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-
+                        ></input>{" "}
                         <input
                           type="date"
                           placeholder="Expiration Date"
-                          name="ExpirationDate_C"
-                          className="form-control"
-                          value={representative.ExpirationDate_C}
+                          name="expirationdate_c"
+                          class="form-control"
+                          value={representative.expirationdate_c}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                    </div>
-                    <br />
-
-                    <p className="paragraphs">
+                        ></input>{" "}
+                      </div>{" "}
+                    </div>{" "}
+                    <br />{" "}
+                    <p class="paragraphs">
+                      {" "}
                       <b>
+                        {" "}
                         Certification: I attest, under penalty of perjury, that
                         (1) I have examined the document(s) presented by the
                         above-named employee, (2) the above-listed document(s)
                         appear to be genuine and to relate to the employee
                         named, and (3) to the best of my knowledge the employee
                         is authorized to work in the United States.
-                      </b>
-                    </p>
-                    <p className="paragraphs">
+                      </b>{" "}
+                    </p>{" "}
+                    <p class="paragraphs">
+                      {" "}
                       The employee's first day of employment{" "}
                       <a href={i9Instructions} target="_blank">
                         {" "}
                         (See instructions)
-                      </a>
+                      </a>{" "}
                       for exemptions:{" "}
-                    </p>
-                    <div className="col-md-3">
-                      <input type="date" className="form-control"></input>
-                    </div>
-                    <div className="row g-3">
-                      <div className="col-md-5">
+                      <div class="col-md-3">
+                        {" "}
+                        <input type="date" class="form-control"></input>{" "}
+                      </div>{" "}
+                    </p>{" "}
+                    <form class="row g-3">
+                      {" "}
+                      <div class="col-md-5">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Representative Signature"
-                          name="RepresentativeSignature"
-                          className="form-control"
-                          value={representative.RepresentativeSignature}
+                          name="representativesignature"
+                          class="form-control"
+                          value={representative.representativesignature}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-3">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-3">
+                        {" "}
                         <input
                           type="date"
                           placeholder="Representative Sign Date"
-                          name="RepresentativeSignDate"
-                          className="form-control"
-                          value={representative.RepresentativeSignDate}
+                          name="representativesigndate"
+                          class="form-control"
+                          value={representative.representativesigndate}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-4">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-4">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Representative Title"
-                          name="RepresentativeTitle"
-                          className="form-control"
-                          value={representative.RepresentativeTitle}
+                          name="representativetitle"
+                          class="form-control"
+                          value={representative.representativetitle}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-6">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-6">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Representative First Name"
-                          name="RepresentativeFirstName"
-                          className="form-control"
-                          value={representative.RepresentativeFirstName}
+                          name="representativefirstname"
+                          class="form-control"
+                          value={representative.representativefirstname}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-6">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-6">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Representative Last Name"
-                          name="RepresentativeLastName"
-                          className="form-control"
-                          value={representative.RepresentativeLastName}
+                          name="representativelastname"
+                          class="form-control"
+                          value={representative.representativelastname}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-12">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-12">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Organization Name"
-                          name="OrganizationName"
-                          className="form-control"
-                          value={representative.OrganizationName}
+                          name="organizationname"
+                          class="form-control"
+                          value={representative.organizationname}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-12">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-12">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Organization Address"
-                          name="OrganizationAddress"
-                          className="form-control"
-                          value={representative.OrganizationAddress}
+                          name="organizationaddress"
+                          class="form-control"
+                          value={representative.organizationaddress}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-6">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-6">
+                        {" "}
                         <input
                           type="text"
                           placeholder="City"
-                          name="OrganizationCity"
-                          className="form-control"
-                          value={representative.OrganizationCity}
+                          name="organizationcity"
+                          class="form-control"
+                          value={representative.organizationcity}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-2">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-2">
+                        {" "}
                         <input
                           type="text"
                           placeholder="State"
-                          name="OrganizationState"
-                          className="form-control"
-                          value={representative.OrganizationState}
+                          name="organizationstate"
+                          class="form-control"
+                          value={representative.organizationstate}
                           onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                      <div className="col-md-4">
+                        ></input>{" "}
+                      </div>{" "}
+                      <div class="col-md-4">
+                        {" "}
                         <input
                           type="text"
                           placeholder="Zipcode"
-                          name="OrganizationZipCode"
-                          className="form-control"
-                          value={representative.OrganizationZipCode}
+                          name="organizationzipcode"
+                          class="form-control"
+                          value={representative.organizationzipcode}
                           onChange={(e) => handleInputChange(e)}
                         ></input>
                       </div>
@@ -651,5 +626,4 @@ const AddRepresentativeComponent = () => {
     </form>
   );
 };
-
 export default AddRepresentativeComponent;
