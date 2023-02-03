@@ -46,7 +46,7 @@ const EmployeeId = (props) => {
                 <div className="row">
                   <h5 className="text-center">I-9 Section 1</h5>
 
-                   <div className="paragraphs">
+                  <div className="paragraphs">
                     {" "}
                     <br />{" "}
                     <p className="paragraphs">
@@ -68,7 +68,7 @@ const EmployeeId = (props) => {
                       future expiration date may also constitute illegal
                       discrimination.{" "}
                     </p>
-                  </div> 
+                  </div>
                   <div className="col">
                     <label className="">
                       Last Name (Family Name): {employee.last_name}
@@ -141,7 +141,7 @@ const EmployeeId = (props) => {
                 <br />
                 {/* citizen part */}
                 <div className="row">
-                   <p className="paragraphs-2">
+                  <p className="paragraphs-2">
                     <b>
                       I am aware that federal law provides for imprisonment
                       and/or fines for false statements or use of false
@@ -153,12 +153,13 @@ const EmployeeId = (props) => {
                       I attest, under penalty of perjury, that I am (check one
                       of the following boxes):
                     </b>
-                  </p> 
+                  </p>
                   <div className="row">
                     <label htmlFor="">Citizenship Status: </label>
                     <li>{employee.citizenshipstatus}</li>
-                    
-                    <br/><br/>
+
+                    <br />
+                    <br />
                     <div className="col">
                       Expiration date: {employee.expirationdate}
                     </div>
@@ -272,7 +273,7 @@ const EmployeeId = (props) => {
                 <div
                   className="modal"
                   id="exampleModal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                   data-bs-backdrop="false"

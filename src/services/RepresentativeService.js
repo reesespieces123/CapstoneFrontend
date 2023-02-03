@@ -2,23 +2,23 @@ import axios from "axios";
 import authHeader from "../services/auth-header";
 
 const REPRESENTATIVE_BASE_REST_API_URL =
-  "http://localhost:8080/api/test/";
+  "http://localhost:8080/api/testrep";
 
 // class RepresentativeService {
   const getAllRepresentatives =()=> {
-    return axios.get(REPRESENTATIVE_BASE_REST_API_URL, {
-      headers: authHeader(),
-    });
+    return axios.get(
+      REPRESENTATIVE_BASE_REST_API_URL + "/" + "representative",{headers: authHeader()});
   }
 
   const createRepresentative=(representative)=> {
-    return axios.post(REPRESENTATIVE_BASE_REST_API_URL + representative, { headers: authHeader() });
+    return axios.post(REPRESENTATIVE_BASE_REST_API_URL, representative);
   }
 
   const getRepresentativeById=(representativeId)=> {
     return axios.get(
-      REPRESENTATIVE_BASE_REST_API_URL + "/" + representativeId,
-      { headers: authHeader() }
+      REPRESENTATIVE_BASE_REST_API_URL +  representativeId,
+      {headers: authHeader(),
+      }
     );
   }
 

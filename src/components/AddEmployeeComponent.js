@@ -769,7 +769,7 @@ const AddEmployeeComponent = () => {
                     <div
                       className="modal"
                       id="exampleModal"
-                      tabindex="-1"
+                      tabIndex="-1"
                       aria-labelledby="exampleModalLabel"
                       aria-hidden="true"
                       data-bs-backdrop="false"
@@ -826,7 +826,7 @@ const AddEmployeeComponent = () => {
                     {/* <!-- Modal --> */}
                     <div
                       className="modal"
-                      tabindex="-1"
+                      tabIndex="-1"
                       role="dialog"
                       aria-labelledby="staticBackdropLabel"
                       aria-hidden="true"

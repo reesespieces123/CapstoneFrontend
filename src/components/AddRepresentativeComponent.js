@@ -37,10 +37,9 @@ const AddRepresentativeComponent = () => {
     organizationzipcode: "",
   });
 
-   const history = useNavigate();
+  const history = useNavigate();
   const { id } = useParams();
 
-  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     if (event.target.type === "radio") {
@@ -296,7 +295,7 @@ const AddRepresentativeComponent = () => {
               ></input>{" "}
               <div className="form-group">
                 {" "}
-                <label for="comment">Additional Information:</label>{" "}
+                <label htmlFor="comment">Additional Information:</label>{" "}
                 <textarea
                   className="form-control"
                   rows="5"
@@ -353,7 +352,7 @@ const AddRepresentativeComponent = () => {
               the employee is authorized to work in the United States.
             </b>{" "}
           </p>{" "}
-          <p className="paragraphs">
+          <div className="paragraphs">
             {" "}
             The employee's first day of employment{" "}
             <a href={i9Instructions} target="_blank">
@@ -365,7 +364,7 @@ const AddRepresentativeComponent = () => {
               {" "}
               <input type="date" className="form-control"></input>{" "}
             </div>{" "}
-          </p>{" "}
+          </div>{" "}
           <div className="row g-3">
             {" "}
             <div className="col-md-5">
@@ -497,7 +496,7 @@ const AddRepresentativeComponent = () => {
               <div
                 className="modal"
                 id="exampleModal"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
                 data-bs-backdrop="false"
@@ -554,7 +553,7 @@ const AddRepresentativeComponent = () => {
               {/* <!-- Modal --> */}
               <div
                 className="modal"
-                tabindex="-1"
+                tabIndex="-1"
                 role="dialog"
                 aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
