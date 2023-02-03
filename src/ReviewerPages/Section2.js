@@ -1,5 +1,5 @@
 import React from "react";
-import AddRepresentativeComponent from "../../components/AddRepresentativeComponent";
+import AddRepresentativeComponent from "../components/AddRepresentativeComponent";
 
 const Section2 = () => {
   return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import RepresentativeService from "../services/RepresentativeService";
 import i9Instructions from "../components/i9Instructions.pdf";
 const AddRepresentativeComponent = () => {
@@ -35,7 +36,11 @@ const AddRepresentativeComponent = () => {
     organizationstate: "",
     organizationzipcode: "",
   });
+
+   const history = useNavigate();
   const { id } = useParams();
+
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     if (event.target.type === "radio") {
@@ -121,506 +126,491 @@ const AddRepresentativeComponent = () => {
     >
       <div>
         <div className="container-max-width: 1519px">
-            <div className="row">
-              <br />
-              <br />
-              {/* "card col-md-6 offset-md-3 offset-md-3"  */}
-              <div className="card col-lg-12">
-                {title()}
-                <div className="container">
-                    <b>
-                      Employer or Authorized Representative Review and
-                      Verification (Employers or their authorized representative
-                      must complete and sign Section 2 within 3 business days of
-                      the employee's first day of employment. You must
-                      physically examine one document from List A OR a
-                      combination of one document from List B and one document
-                      from List C as listed on the{" "}
-                      <a href={i9Instructions} target="_blank">
-                        {" "}
-                        List of Acceptable Documents.
-                      </a>{" "}
-                      )
-                    </b>{" "}
-                 </div>
-                  {/* FORM STARTS HERE */}
-                    {/* START OF DIV ROW */}
-                    {/* FIRST COL */}
-                        <div>
-                          {" "}
-                          <input
-                            type="text"
-                            placeholder="Document Title"
-                            name="document_title_a1"
-                            class="form-control"
-                            value={representative.document_title_a1}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="text"
-                            placeholder="Issuing Authority"
-                            name="issuingauthority_a1"
-                            class="form-control"
-                            value={representative.issuingauthority_a1}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="text"
-                            placeholder="Document Number"
-                            name="documentnumber_a1"
-                            class="form-control"
-                            value={representative.documentnumber_a1}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="date"
-                            placeholder="Expiration Date"
-                            name="expirationdate_a1"
-                            class="form-control"
-                            value={representative.expirationdate_a1}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                        </div>{" "}
-                        <br></br>{" "}
-                        <div>
-                          {" "}
-                          <input
-                            type="text"
-                            placeholder="Document Title"
-                            name="document_title_a2"
-                            class="form-control"
-                            value={representative.document_title_a2}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="text"
-                            placeholder="Issuing Authority"
-                            name="issuingauthority_a2"
-                            class="form-control"
-                            value={representative.issuingauthority_a2}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="text"
-                            placeholder="Document Number"
-                            name="documentnumber_a2"
-                            class="form-control"
-                            value={representative.documentnumber_a2}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="date"
-                            placeholder="Expiration Date"
-                            name="expirationdate_a2"
-                            class="form-control"
-                            value={representative.expirationdate_a2}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                        </div>{" "}
-                        <br></br>{" "}
-                        <div>
-                          {" "}
-                          <input
-                            type="text"
-                            placeholder="Document Title"
-                            name="documenttitle_a3"
-                            class="form-control"
-                            value={representative.documenttitle_a3}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="text"
-                            placeholder="Issuing Authority"
-                            name="issuingauthority_a3"
-                            class="form-control"
-                            value={representative.issuingauthority_a3}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="text"
-                            placeholder="Document Number"
-                            name="documentnumber_a3"
-                            class="form-control"
-                            value={representative.documentnumber_a3}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                          <input
-                            type="date"
-                            placeholder="Expiration Date"
-                            name="expirationdate_a3"
-                            class="form-control"
-                            value={representative.expirationdate_a3}
-                            onChange={(e) => handleInputChange(e)}
-                          ></input>{" "}
-                        </div>{" "}
-                      </div>{" "}
-                      <div class="vr"></div>{" "}
-                      <div class="col-md">
-                        {" "}
-                        <h5 class="text-center">List B</h5>{" "}
-                        <input
-                          type="text"
-                          placeholder="Document Title"
-                          name="documenttitle_b"
-                          class="form-control"
-                          value={representative.documenttitle_b}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <input
-                          type="text"
-                          name="issuingauthority_b"
-                          placeholder="Issuing Authority"
-                          class="form-control"
-                          value={representative.issuingauthority_b}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <input
-                          type="text"
-                          placeholder="Document Number"
-                          name="documentnumber_b"
-                          class="form-control"
-                          value={representative.documentnumber_b}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <input
-                          type="date"
-                          placeholder="Expiration Date"
-                          name="expirationdate_b"
-                          class="form-control"
-                          value={representative.expirationdate_b}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <div class="form-group">
-                          {" "}
-                          <label for="comment">
-                            Additional Information:
-                          </label>{" "}
-                          <textarea
-                            class="form-control"
-                            rows="5"
-                            id=" additionalinfo_b"
-                          ></textarea>{" "}
-                        </div>{" "}
-                      </div>{" "}
-                      <div class="col-md">
-                        {" "}
-                        <h5 class="text-center">List C</h5>{" "}
-                        <input
-                          type="text"
-                          placeholder="Document Title"
-                          name="documenttitle_c"
-                          class="form-control"
-                          value={representative.documenttitle_c}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <input
-                          type="text"
-                          placeholder="Issuing Authority"
-                          name="issuingauthority_c"
-                          class="form-control"
-                          value={representative.issuingauthority_c}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <input
-                          type="text"
-                          placeholder="Document Number"
-                          name="documentnumber_c"
-                          class="form-control"
-                          value={representative.documentnumber_c}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                        <input
-                          type="date"
-                          placeholder="Expiration Date"
-                          name="expirationdate_c"
-                          class="form-control"
-                          value={representative.expirationdate_c}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                    </div>{" "}
-                    <br />{" "}
-                    <p class="paragraphs">
-                      {" "}
-                      <b>
-                        {" "}
-                        Certification: I attest, under penalty of perjury, that
-                        (1) I have examined the document(s) presented by the
-                        above-named employee, (2) the above-listed document(s)
-                        appear to be genuine and to relate to the employee
-                        named, and (3) to the best of my knowledge the employee
-                        is authorized to work in the United States.
-                      </b>{" "}
-                    </p>{" "}
-                    <p class="paragraphs">
-                      {" "}
-                      The employee's first day of employment{" "}
-                      <a href={i9Instructions} target="_blank">
-                        {" "}
-                        (See instructions)
-                      </a>{" "}
-                      for exemptions:{" "}
-                      <div class="col-md-3">
-                        {" "}
-                        <input type="date" class="form-control"></input>{" "}
-                      </div>{" "}
-                    </p>{" "}
-                    <div class="row g-3">
-                      {" "}
-                      <div class="col-md-5">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Representative Signature"
-                          name="representativesignature"
-                          class="form-control"
-                          value={representative.representativesignature}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-3">
-                        {" "}
-                        <input
-                          type="date"
-                          placeholder="Representative Sign Date"
-                          name="representativesigndate"
-                          class="form-control"
-                          value={representative.representativesigndate}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-4">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Representative Title"
-                          name="representativetitle"
-                          class="form-control"
-                          value={representative.representativetitle}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-6">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Representative First Name"
-                          name="representativefirstname"
-                          class="form-control"
-                          value={representative.representativefirstname}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-6">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Representative Last Name"
-                          name="representativelastname"
-                          class="form-control"
-                          value={representative.representativelastname}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-12">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Organization Name"
-                          name="organizationname"
-                          class="form-control"
-                          value={representative.organizationname}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-12">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Organization Address"
-                          name="organizationaddress"
-                          class="form-control"
-                          value={representative.organizationaddress}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-6">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="City"
-                          name="organizationcity"
-                          class="form-control"
-                          value={representative.organizationcity}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-2">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="State"
-                          name="organizationstate"
-                          class="form-control"
-                          value={representative.organizationstate}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>{" "}
-                      </div>{" "}
-                      <div class="col-md-4">
-                        {" "}
-                        <input
-                          type="text"
-                          placeholder="Zipcode"
-                          name="organizationzipcode"
-                          class="form-control"
-                          value={representative.organizationzipcode}
-                          onChange={(e) => handleInputChange(e)}
-                        ></input>
-                      </div>
-                    </div>
-                    <br />
-                    {/* ////////////// */}
-                    <div className="row">
-                      <div className="col offset-md-3">
-                        {/* <!-- CANCEL trigger modal --> */}
-                        <button
-                          type="button"
-                          className="btn btn-danger"
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"
-                        >
-                          CANCEL
-                        </button>
-
-                        {/* <!-- Modal --> */}
-                        <div
-                          className="modal"
-                          id="exampleModal"
-                          tabindex="-1"
-                          aria-labelledby="exampleModalLabel"
-                          aria-hidden="true"
-                          data-bs-backdrop="false"
-                          data-bs-keyboard="false"
-                        >
-                          <div className="modal-dialog">
-                            <div className="modal-content">
-                              <div className="modal-header">
-                                <h5
-                                  className="modal-title"
-                                  id="exampleModalLabel"
-                                >
-                                  ALERT
-                                </h5>
-                                <button
-                                  type="button"
-                                  className="btn-close"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"
-                                ></button>
-                              </div>
-                              <div className="modal-body">
-                                Are you sure you want to cancel? This will
-                                result in your data not being submitted or
-                                saved.
-                              </div>
-                              <div className="modal-footer">
-                                <button
-                                  type="button"
-                                  className="btn btn-danger"
-                                  data-bs-dismiss="modal"
-                                >
-                                  Cancel
-                                </button>
-
-                                <Link
-                                  to="/reviewer"
-                                  className="btn btn-success"
-                                >
-                                  Continue
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* ////////////////////// */}
-
-                      <div className="col offset-md">
-                        {/* <!-- SUBMIT trigger modal --> */}
-                        <button
-                          type="button"
-                          className="btn btn-success"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop"
-                        >
-                          SUBMIT
-                        </button>
-
-                        {/* <!-- Modal --> */}
-                        <div
-                          className="modal"
-                          tabindex="-1"
-                          role="dialog"
-                          aria-labelledby="staticBackdropLabel"
-                          aria-hidden="true"
-                          id="staticBackdrop"
-                          data-bs-backdrop="static"
-                          data-bs-keyboard="false"
-                        >
-                          <div className="modal-dialog">
-                            <div className="modal-content">
-                              <div className="modal-header">
-                                <h5
-                                  className="modal-title"
-                                  id="staticBackdropLabel"
-                                >
-                                  ALERT
-                                </h5>
-                                <button
-                                  type="button"
-                                  className="btn-close"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"
-                                ></button>
-                              </div>
-                              <div className="modal-body">
-                                Are you sure you are done reviewing this I-9 Form? If you are submit this form
-                              </div>
-                              <div className="modal-footer">
-                                <button
-                                  type="button"
-                                  className="btn btn-danger"
-                                  data-bs-dismiss="modal"
-                                >
-                                  Return
-                                </button>
-                                <button
-                                  type="submit"
-                                  className="btn btn-success"
-                                  onClick={(e) => saveOrUpdateRepresentative(e)}
-                                  data-bs-dismiss="modal"
-                                >
-                                  Submit
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* ////////////////////////////////////////////// */}
-
-                      {/*  */}
-                    </div>
-
-                    {/* ///////////////////////// */}
-                  </div>
-                  <br />
-                </div>
-              
-              </form>
-           )
-                      }
+          <div className="row">
+            <br />
+            <br />
+            {/* "card col-md-6 offset-md-3 offset-md-3"  */}
+            <div className="card col-lg-12">
+              {title()}
+              <div className="container">
+                <b>
+                  Employer or Authorized Representative Review and Verification
+                  (Employers or their authorized representative must complete
+                  and sign Section 2 within 3 business days of the employee's
+                  first day of employment. You must physically examine one
+                  document from List A OR a combination of one document from
+                  List B and one document from List C as listed on the{" "}
+                  <a href={i9Instructions} target="_blank">
+                    {" "}
+                    List of Acceptable Documents.
+                  </a>{" "}
+                  )
+                </b>{" "}
+              </div>
+              {/* FORM STARTS HERE */}
+              {/* START OF DIV ROW */}
+              {/* FIRST COL */}
+              <div>
+                {" "}
+                <input
+                  type="text"
+                  placeholder="Document Title"
+                  name="document_title_a1"
+                  className="form-control"
+                  value={representative.document_title_a1}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="text"
+                  placeholder="Issuing Authority"
+                  name="issuingauthority_a1"
+                  className="form-control"
+                  value={representative.issuingauthority_a1}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="text"
+                  placeholder="Document Number"
+                  name="documentnumber_a1"
+                  className="form-control"
+                  value={representative.documentnumber_a1}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="date"
+                  placeholder="Expiration Date"
+                  name="expirationdate_a1"
+                  className="form-control"
+                  value={representative.expirationdate_a1}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+              </div>{" "}
+              <br></br>{" "}
+              <div>
+                {" "}
+                <input
+                  type="text"
+                  placeholder="Document Title"
+                  name="document_title_a2"
+                  className="form-control"
+                  value={representative.document_title_a2}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="text"
+                  placeholder="Issuing Authority"
+                  name="issuingauthority_a2"
+                  className="form-control"
+                  value={representative.issuingauthority_a2}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="text"
+                  placeholder="Document Number"
+                  name="documentnumber_a2"
+                  className="form-control"
+                  value={representative.documentnumber_a2}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="date"
+                  placeholder="Expiration Date"
+                  name="expirationdate_a2"
+                  className="form-control"
+                  value={representative.expirationdate_a2}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+              </div>{" "}
+              <br></br>{" "}
+              <div>
+                {" "}
+                <input
+                  type="text"
+                  placeholder="Document Title"
+                  name="documenttitle_a3"
+                  className="form-control"
+                  value={representative.documenttitle_a3}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="text"
+                  placeholder="Issuing Authority"
+                  name="issuingauthority_a3"
+                  className="form-control"
+                  value={representative.issuingauthority_a3}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="text"
+                  placeholder="Document Number"
+                  name="documentnumber_a3"
+                  className="form-control"
+                  value={representative.documentnumber_a3}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+                <input
+                  type="date"
+                  placeholder="Expiration Date"
+                  name="expirationdate_a3"
+                  className="form-control"
+                  value={representative.expirationdate_a3}
+                  onChange={(e) => handleInputChange(e)}
+                ></input>{" "}
+              </div>{" "}
+            </div>{" "}
+            <div className="vr"></div>{" "}
+            <div className="col-md">
+              {" "}
+              <h5 className="text-center">List B</h5>{" "}
+              <input
+                type="text"
+                placeholder="Document Title"
+                name="documenttitle_b"
+                className="form-control"
+                value={representative.documenttitle_b}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <input
+                type="text"
+                name="issuingauthority_b"
+                placeholder="Issuing Authority"
+                className="form-control"
+                value={representative.issuingauthority_b}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <input
+                type="text"
+                placeholder="Document Number"
+                name="documentnumber_b"
+                className="form-control"
+                value={representative.documentnumber_b}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <input
+                type="date"
+                placeholder="Expiration Date"
+                name="expirationdate_b"
+                className="form-control"
+                value={representative.expirationdate_b}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <div className="form-group">
+                {" "}
+                <label for="comment">Additional Information:</label>{" "}
+                <textarea
+                  className="form-control"
+                  rows="5"
+                  id=" additionalinfo_b"
+                ></textarea>{" "}
+              </div>{" "}
+            </div>{" "}
+            <div className="col-md">
+              {" "}
+              <h5 className="text-center">List C</h5>{" "}
+              <input
+                type="text"
+                placeholder="Document Title"
+                name="documenttitle_c"
+                className="form-control"
+                value={representative.documenttitle_c}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <input
+                type="text"
+                placeholder="Issuing Authority"
+                name="issuingauthority_c"
+                className="form-control"
+                value={representative.issuingauthority_c}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <input
+                type="text"
+                placeholder="Document Number"
+                name="documentnumber_c"
+                className="form-control"
+                value={representative.documentnumber_c}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+              <input
+                type="date"
+                placeholder="Expiration Date"
+                name="expirationdate_c"
+                className="form-control"
+                value={representative.expirationdate_c}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+          </div>{" "}
+          <br />{" "}
+          <p className="paragraphs">
+            {" "}
+            <b>
+              {" "}
+              Certification: I attest, under penalty of perjury, that (1) I have
+              examined the document(s) presented by the above-named employee,
+              (2) the above-listed document(s) appear to be genuine and to
+              relate to the employee named, and (3) to the best of my knowledge
+              the employee is authorized to work in the United States.
+            </b>{" "}
+          </p>{" "}
+          <p className="paragraphs">
+            {" "}
+            The employee's first day of employment{" "}
+            <a href={i9Instructions} target="_blank">
+              {" "}
+              (See instructions)
+            </a>{" "}
+            for exemptions:{" "}
+            <div className="col-md-3">
+              {" "}
+              <input type="date" className="form-control"></input>{" "}
+            </div>{" "}
+          </p>{" "}
+          <div className="row g-3">
+            {" "}
+            <div className="col-md-5">
+              {" "}
+              <input
+                type="text"
+                placeholder="Representative Signature"
+                name="representativesignature"
+                className="form-control"
+                value={representative.representativesignature}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-3">
+              {" "}
+              <input
+                type="date"
+                placeholder="Representative Sign Date"
+                name="representativesigndate"
+                className="form-control"
+                value={representative.representativesigndate}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-4">
+              {" "}
+              <input
+                type="text"
+                placeholder="Representative Title"
+                name="representativetitle"
+                className="form-control"
+                value={representative.representativetitle}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-6">
+              {" "}
+              <input
+                type="text"
+                placeholder="Representative First Name"
+                name="representativefirstname"
+                className="form-control"
+                value={representative.representativefirstname}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-6">
+              {" "}
+              <input
+                type="text"
+                placeholder="Representative Last Name"
+                name="representativelastname"
+                className="form-control"
+                value={representative.representativelastname}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-12">
+              {" "}
+              <input
+                type="text"
+                placeholder="Organization Name"
+                name="organizationname"
+                className="form-control"
+                value={representative.organizationname}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-12">
+              {" "}
+              <input
+                type="text"
+                placeholder="Organization Address"
+                name="organizationaddress"
+                className="form-control"
+                value={representative.organizationaddress}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-6">
+              {" "}
+              <input
+                type="text"
+                placeholder="City"
+                name="organizationcity"
+                className="form-control"
+                value={representative.organizationcity}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-2">
+              {" "}
+              <input
+                type="text"
+                placeholder="State"
+                name="organizationstate"
+                className="form-control"
+                value={representative.organizationstate}
+                onChange={(e) => handleInputChange(e)}
+              ></input>{" "}
+            </div>{" "}
+            <div className="col-md-4">
+              {" "}
+              <input
+                type="text"
+                placeholder="Zipcode"
+                name="organizationzipcode"
+                className="form-control"
+                value={representative.organizationzipcode}
+                onChange={(e) => handleInputChange(e)}
+              ></input>
+            </div>
+          </div>
           <br />
+          {/* ////////////// */}
+          <div className="row">
+            <div className="col offset-md-3">
+              {/* <!-- CANCEL trigger modal --> */}
+              <button
+                type="button"
+                className="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                CANCEL
+              </button>
+
+              {/* <!-- Modal --> */}
+              <div
+                className="modal"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+                data-bs-backdrop="false"
+                data-bs-keyboard="false"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="exampleModalLabel">
+                        ALERT
+                      </h5>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">
+                      Are you sure you want to cancel? This will result in your
+                      data not being submitted or saved.
+                    </div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+
+                      <Link to="/reviewer" className="btn btn-success">
+                        Continue
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ////////////////////// */}
+
+            <div className="col offset-md">
+              {/* <!-- SUBMIT trigger modal --> */}
+              <button
+                type="button"
+                className="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                SUBMIT
+              </button>
+
+              {/* <!-- Modal --> */}
+              <div
+                className="modal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="staticBackdropLabel">
+                        ALERT
+                      </h5>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">
+                      Are you sure you are done reviewing this I-9 Form? If you
+                      are submit this form
+                    </div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        data-bs-dismiss="modal"
+                      >
+                        Return
+                      </button>
+                      <button
+                        type="submit"
+                        className="btn btn-success"
+                        onClick={(e) => saveOrUpdateRepresentative(e)}
+                        data-bs-dismiss="modal"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* ////////////////////////////////////////////// */}
+
+            {/*  */}
+          </div>
+          {/* ///////////////////////// */}
+        </div>
+        <br />
+      </div>
+    </form>
+  );
+};
+<br />;
 
 export default AddRepresentativeComponent;

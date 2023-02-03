@@ -28,11 +28,11 @@ import Success from "./EmployeeStructure/Success";
 
 // REVIEWER PAGES //
 // section 2 for reviewer
-import Section2 from "./ReviewerStructure/Section2";
+import Section2 from "./ReviewerPages/Section2";
 // table
-import BoardReviewer from "./ReviewerStructure/BoardReviewer";
+import BoardReviewer from "./ReviewerPages/BoardReviewer";
 // renders each employee id to its own page
-import EmployeeId from "./ReviewerStructure/EmployeeId";
+import EmployeeId from "./ReviewerPages/EmployeeId";
 // list of employers table
 import EmployeesTableComponent from "./components/EmployeesTableComponent";
 
