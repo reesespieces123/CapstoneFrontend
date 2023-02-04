@@ -11,7 +11,9 @@ const REPRESENTATIVE_BASE_REST_API_URL =
   }
 
   const createRepresentative=(representative)=> {
-    return axios.post(REPRESENTATIVE_BASE_REST_API_URL);
+    return axios.post(REPRESENTATIVE_BASE_REST_API_URL, {
+      headers: authHeader()
+    });
   }
 
   const getRepresentativeById=(representativeId)=> {
