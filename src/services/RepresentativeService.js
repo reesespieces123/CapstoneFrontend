@@ -7,7 +7,7 @@ const REPRESENTATIVE_BASE_REST_API_URL =
 // class RepresentativeService {
   const getAllRepresentative =()=> {
     return axios.get(
-      REPRESENTATIVE_BASE_REST_API_URL + "/representative" ,{headers: authHeader()});
+      REPRESENTATIVE_BASE_REST_API_URL + "/" + "representative" , { headers: authHeader() });
   }
 
   const createRepresentative=(representative)=> {
@@ -15,7 +15,7 @@ const REPRESENTATIVE_BASE_REST_API_URL =
   }
 
   const getRepresentativeById=(representativeId)=> {
-    return axios.get(REPRESENTATIVE_BASE_REST_API_URL +  representativeId ,{headers: authHeader(),
+    return axios.get(REPRESENTATIVE_BASE_REST_API_URL + "/" + "representative" ,{headers: authHeader(),
       });
   }
 
