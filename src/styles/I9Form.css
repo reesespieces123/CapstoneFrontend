@@ -1,0 +1,33 @@
+body {
+    margin-top: 15px;
+}
+
+
+.paragraphs {
+    font-size: 13.5px;
+}
+
+.paragraphs-2 {
+    font-size: 15px;
+}
+
+.form-label {
+    font-size: 14px;
+}
+
+.space {
+    margin-top: 15px;
+}
+
+.small-text {
+    font-size: 13px;
+}
+
+.m-text {
+    font-size: 14px;
+}
+
+.big {
+    display: flex;
+    justify-content: center;
+}
