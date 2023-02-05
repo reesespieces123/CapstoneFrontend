@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import i9Instructions from "../components/i9Instructions.pdf";
 
 const Success = () => {
   return (
@@ -18,7 +19,9 @@ const Success = () => {
                 Submit necessary additional documents by email.
               </h5>
               <h5 className="text-center">
-                For a list of acceptable documents click here.
+                For a list of acceptable documents&nbsp;
+                <a target="_blank" href={i9Instructions}>click here.</a>
+                
               </h5>
               <h5 className="text-center">
                 Check the approval status of your submission here
@@ -32,9 +35,9 @@ const Success = () => {
                 For any questions, email our HR team at HRhelp@adp.com
               </h5>
               <br />
-              <h6 className="text-center">You may now leave this page and go back to your profile</h6>
+              <h6 className="text-center">You may now leave this page and go back to your home page</h6>
               <div className="row justify-content-center">
-                <Link to="/Profile" className="btn btn-success col-1">
+                <Link to="/Home" className="btn btn-success col-1">
                   Continue
                 </Link>
               </div>
