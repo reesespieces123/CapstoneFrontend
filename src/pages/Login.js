@@ -53,7 +53,7 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       dispatch(login(username, password))
         .then(() => {
-          navigate("/profile");
+          navigate("/home");
           window.location.reload();
         })
         .catch(() => {
@@ -101,7 +101,7 @@ const Login = (props) => {
               validations={[required]}
             />
           </div>
-
+<br/>
           <div className="form-group">
             <button className="btn btn-primary btn-block" disabled={loading}>
               {loading && (

@@ -44,8 +44,10 @@ const EmployeeId = (props) => {
               <form className="container">
                 {/* first row */}
                 <div className="row">
-                  <h5 className="text-center">I-9 Section 1</h5>
-
+                  <h2 className="text-center">
+                    Employment Eligibility Verification
+                  </h2>
+                  {/* 
                    <div className="paragraphs">
                     {" "}
                     <br />{" "}
@@ -68,27 +70,40 @@ const EmployeeId = (props) => {
                       future expiration date may also constitute illegal
                       discrimination.{" "}
                     </p>
-                  </div> 
+                  </div>  */}
+                  <h3>Section 1</h3>
                   <div className="col">
                     <label className="">
-                      Last Name (Family Name): {employee.last_name}
+                      Last Name (Family Name):&nbsp;
+                      <mark>
+                        <b> {employee.last_name}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
 
                   <div className="col">
                     <label className="">
-                      First Name (Given Name): {employee.first_name}
+                      First Name (Given Name):&nbsp;
+                      <mark>
+                        <b> {employee.first_name}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                   <div className="col">
                     <label className="">
                       {" "}
-                      Middle Initial: {employee.middleinitial}
+                      Middle Initial:&nbsp;
+                      <mark>
+                        <b> {employee.middleinitial}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                   <div className="col">
                     <label className="">
-                      Other Last Name (if any): {employee.otherlastname}
+                      Other Last Name (if any):&nbsp;
+                      <mark>
+                        <b> {employee.otherlastname}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                 </div>
@@ -96,21 +111,46 @@ const EmployeeId = (props) => {
                 {/* second row */}
                 <div className="row">
                   <div className="col">
-                    <label className="">Address: {employee.address}</label>
-                  </div>
-                  <div className="col">
                     <label className="">
-                      Apartment Number: {employee.aptnumber}
+                      Address:&nbsp;
+                      <mark>
+                        <b> {employee.address}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                   <div className="col">
-                    <label className="">City or Town: {employee.city} </label>
+                    <label className="">
+                      Apartment Number:&nbsp;
+                      <mark>
+                        <b> {employee.aptnumber}&nbsp;</b>
+                      </mark>
+                    </label>
                   </div>
                   <div className="col">
-                    <label className=""> State: {employee.state} </label>
+                    <label className="">
+                      City or Town:&nbsp;
+                      <mark>
+                        <b> {employee.city}&nbsp;</b>
+                      </mark>
+                    </label>
                   </div>
                   <div className="col">
-                    <label className=""> ZIP Code: {employee.zipcode} </label>
+                    <label className="">
+                      {" "}
+                      State:&nbsp;
+                      <mark>
+                        <b> {employee.state}&nbsp;</b>
+                      </mark>
+                    </label>
+                  </div>
+                  <div className="col">
+                    <label className="">
+                      {" "}
+                      ZIP Code:&nbsp;
+                      <mark>
+                        <b> {employee.zipcode}&nbsp;</b>
+                      </mark>
+                    </label>
                   </div>
                 </div>
                 <br />
@@ -118,30 +158,43 @@ const EmployeeId = (props) => {
                 <div className="row">
                   <div className="col">
                     <label className="">
-                      Date of Birth (mm/dd/yyyy): {employee.dateofbirth}
+                      Date of Birth (mm/dd/yyyy):&nbsp;
+                      <mark>
+                        <b> {employee.dateofbirth}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                   <div className="col">
                     <label className="">
                       {" "}
-                      Social Security: {employee.socialSecurity}
+                      Social Security:&nbsp;
+                      <mark>
+                        <b> {employee.socialSecurity}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                   <div className="col">
                     <label className="">
-                      Email Address: {employee.employee_email}
+                      Email Address:&nbsp;
+                      <mark>
+                        <b> {employee.employee_email}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                   <div className="col">
                     <label className="">
-                      Telephone Number: {employee.telephone}
+                      Telephone Number:&nbsp;
+                      <mark>
+                        <b> {employee.telephone}&nbsp;</b>
+                      </mark>
                     </label>
                   </div>
                 </div>
                 <br />
+                <hr />
                 {/* citizen part */}
-                <div className="row">
-                   <p className="paragraphs-2">
+                {/* <div className="row">
+                  <p className="paragraphs-2">
                     <b>
                       I am aware that federal law provides for imprisonment
                       and/or fines for false statements or use of false
@@ -153,112 +206,156 @@ const EmployeeId = (props) => {
                       I attest, under penalty of perjury, that I am (check one
                       of the following boxes):
                     </b>
-                  </p> 
-                  <div className="row">
-                    <label htmlFor="">Citizenship Status: </label>
-                    <li>{employee.citizenshipstatus}</li>
-                    
-                    <br/><br/>
-                    <div className="col">
-                      Expiration date: {employee.expirationdate}
-                    </div>
-                  </div>
-
-                  <label>
-                    Some aliens may write "N/A" in the expiration date field.
-                    <em>
-                      {/* <a target="_blank" href={i9Instructions}>
-                          (See instructions)
-                        </a> */}
-                    </em>
-                  </label>
-                  <br />
-                  <br />
-                  <label>
-                    <em className="m-text">
-                      Aliens authorized to work must provide only one of the
-                      following document numbers to complete Form I-9:
-                    </em>
-                  </label>
-                  <label>
-                    <em className="m-text">
-                      Alien Registration Number/USCIS Number OR Form I-94
-                      Admission Number OR Foreign Passport Number.
-                    </em>
-                  </label>
+                  </p> */}
+                <h3>Citizenship</h3>
+                <p></p>
+                <label className="">
+                  Citizenship Status:&nbsp;
+                  <mark>
+                    <b> {employee.citizenshipstatus}&nbsp;</b>
+                  </mark>
+                </label>
+                <br />
+                <div className="col">
+                  Expiration date:&nbsp;
+                  <mark>
+                    <b> {employee.expirationdate}&nbsp;</b>
+                  </mark>
                 </div>
+
                 <br />
                 {/* second part of citizen */}
                 <div className="row">
                   <ol>
                     <li>
-                      Alien Registration Number/USCIS Number:{" "}
-                      {employee.alienauthorizationnumber}
+                      Alien Registration Number/USCIS Number:&nbsp;
+                      <mark>
+                        <b> {employee.alienauthorizationnumber}&nbsp;</b>
+                      </mark>
                     </li>
                     <br />
                     <strong className="big">OR</strong>
                     <br />
                     <li>
-                      Form I-94 Admission Number: {employee.formadmissionnumber}
+                      Form I-94 Admission Number:&nbsp;
+                      <mark>
+                        <b> {employee.formadmissionnumber}&nbsp;</b>
+                      </mark>
                     </li>
                     <br />
                     <strong className="big">OR</strong>
                     <br />
                     <li>
-                      Foreign Passport Number: {employee.foreignpassportnumber}{" "}
-                      <p>Country of Issuance: {employee.countryofissuance}</p>
+                      Foreign Passport Number:&nbsp;
+                      <mark>
+                        <b> {employee.foreignpassportnumber}&nbsp;</b>
+                      </mark>
                     </li>
+                    <br />
+                    <p>
+                      Country of Issuance:&nbsp;
+                      <mark>
+                        <b> {employee.countryofissuance}&nbsp;</b>
+                      </mark>
+                    </p>
                   </ol>
                 </div>
+                <hr />
+                {/* //////////////////////////////////// */}
                 <div className="row">
-                  <h5>Employee Signature</h5>
+                  <h3>Employee Signature</h3>
                   <div className="col">
-                    <label>Employee Signature: </label>
-                    <label>&nbsp;{employee.employeesignature}</label>
+                    <label>
+                      Employee Signature:&nbsp;
+                      <mark>
+                        <b>{employee.employeesignature}&nbsp;</b>
+                      </mark>
+                    </label>
                   </div>
 
                   <div className="col">
-                    <label>Employee Signature Date: </label>
-                    <label>&nbsp;{employee.employeesignaturedate}</label>
+                    <label>
+                      Employee Signature Date:&nbsp;
+                      <mark>
+                        <b>{employee.employeesignaturedate}&nbsp;</b>
+                      </mark>
+                    </label>
                   </div>
                   <br />
                   <br />
+                  <br />
+
+                  <hr />
                   {/* preparer part */}
                   <div className="row">
-                    <h5>Preparer and/or Translator Certification</h5>
+                    <h3>Preparer and/or Translator Certification</h3>
+                    <p></p>
                     <div className="col">
-                      Signature of Preparer/Translator: {employee.preparersig}
+                      Signature of Preparer/Translator:&nbsp;
+                      <mark>
+                        <b> {employee.preparersig}&nbsp;</b>
+                      </mark>
                     </div>
+
                     <div className="col">
-                      Date Signed: {employee.preparerdate}
+                      Date Signed:&nbsp;
+                      <mark>
+                        <b> {employee.preparerdate}&nbsp;</b>
+                      </mark>
                     </div>
                   </div>
-
+                  <p></p>
                   <div className="row">
                     <div className="col">
-                      Last Name: {employee.preparerlast}
+                      Last Name:&nbsp;
+                      <mark>
+                        <b> {employee.preparerlast}&nbsp;</b>
+                      </mark>
                     </div>
                     <div className="col">
-                      First Name: {employee.preparerfirst}
+                      First Name:&nbsp;
+                      <mark>
+                        <b> {employee.preparerfirst}&nbsp;</b>
+                      </mark>
                     </div>
                   </div>
-
+                  <p></p>
                   <div className="row">
                     <div className="col">
-                      Address: {employee.prepareraddress}
+                      Address:&nbsp;
+                      <mark>
+                        <b> {employee.prepareraddress}&nbsp;</b>
+                      </mark>
                     </div>
-                    <div className="col">City: {employee.preparercity}</div>
-                    <div className="col">State: {employee.preparerstate}</div>
-                    <div className="col">Zip Codee: {employee.preparerzip}</div>
+                    <div className="col">
+                      City:&nbsp;
+                      <mark>
+                        <b> {employee.preparercity}&nbsp;</b>
+                      </mark>
+                    </div>
+                    <div className="col">
+                      State:&nbsp;
+                      <mark>
+                        <b> {employee.preparerstate}&nbsp;</b>
+                      </mark>
+                    </div>
+                    <div className="col">
+                      Zip Codee:&nbsp;
+                      <mark>
+                        <b> {employee.preparerzip}&nbsp;</b>
+                      </mark>
+                    </div>
                   </div>
                 </div>
                 <br />
-
-                <h5>
-                  Continue to complete {employee.first_name}(s) Section 2 Form:{" "}
-                </h5>
+                <hr />
+                <br/>
+                <h4>
+                  Continue to complete {employee.first_name}'s Section 2 Form:{" "}
+                </h4>
+                
                 {/* /// */}
-                {/* <!-- CANCEL trigger modal --> */}
+                {/* <!-- CONTINUE trigger modal --> */}
                 <button
                   type="button"
                   className="btn btn-success"
@@ -292,8 +389,8 @@ const EmployeeId = (props) => {
                         ></button>
                       </div>
                       <div className="modal-body">
-                        Are you sure you have reviewed {employee.first_name} I-9
-                        Form? If yes continue to Section 2.
+                        Are you sure you have reviewed {employee.first_name}'s' I-9
+                        Form? If YES continue to Section 2.
                       </div>
                       <div className="modal-footer">
                         <button

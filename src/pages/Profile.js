@@ -25,26 +25,17 @@ const Profile = () => {
           Click Here
         </Link>
       </div>
-      <p>
-        {/* <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
-        {currentUser.accessToken.substr(currentUser.accessToken.length - 20)} */}
-        Already Filled Out Your I-9? <br />
-        Click here to check your form status
-      </p>
+      <br />
       <div>
+        <p>Already Filled Out Your I-9?<br />Click here to check your form status</p>
         <Link to="/Home" relative="path" className="btn btn-primary">
-          Click Here
+          Click here
         </Link>
       </div>
+      <br/>
       <p>
-        <strong>Your Employee Id Number:</strong> {currentUser.id}
+        <strong>Your Employee ID Number:</strong> {currentUser.id}
       </p>
-      <p>{/* <strong>Email:</strong> {currentUser.email} */}</p>
-      {/* <strong>Authorities:</strong>
-      <ul>
-        {currentUser.roles &&
-          currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-      </ul> */}
     </div>
   );
 };

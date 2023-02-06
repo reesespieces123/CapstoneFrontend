@@ -140,7 +140,7 @@ const Register = () => {
                   validations={[required, vpassword]}
                 />
               </div>
-
+              <br />
               <div className="form-group">
                 <button className="btn btn-primary btn-block">Sign Up</button>
               </div>

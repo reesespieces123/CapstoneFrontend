@@ -125,11 +125,11 @@ const AddRepresentativeComponent = () => {
   }, []);
 
   const title = () => {
-    if (id) {
-      return <h2 className="text-center">Update Employee</h2>;
-    } else {
-      return <h2 className="text-center">I-9 Section 2</h2>;
-    }
+    return (
+      <>
+        <h2 className="text-center">Employment Eligibility Verification</h2>
+      </>
+    );
   };
 
   return (
@@ -148,33 +148,37 @@ const AddRepresentativeComponent = () => {
               {/* "card col-md-6 offset-md-3 offset-md-3"  */}
               <div className="card col-lg-12">
                 {title()}
+                <br />
                 <div className="container">
-                  <br />
-                  <p className="paragraphs">
-                    <b>
-                      Employer or Authorized Representative Review and
-                      Verification (Employers or their authorized representative
-                      must complete and sign Section 2 within 3 business days of
-                      the employee's first day of employment. You must
-                      physically examine one document from List A OR a
-                      combination of one document from List B and one document
-                      from List C as listed on the{" "}
+                  <div>
+                    <h4>
+                      Section 2. Employer or Authorized Representative Review
+                      and Verification{" "}
+                    </h4>
+                    <p className="paragraphs">
+                      (Employers or their authorized representative must
+                      complete and sign Section 2 within 3 business days of the
+                      employee's first day of employment. You must physically
+                      examine one document from List A OR a combination of one
+                      document from List B and one document from List C as
+                      listed on the{" "}
                       <a href={i9Instructions} target="_blank">
-                        {" "}
-                        List of Acceptable Documents.
+                        "List of Acceptable Documents."
                       </a>
                       )
-                    </b>
-                  </p>
-
+                    </p>
+                  </div>
                   {/* FORM STARTS HERE */}
                   <div className="container">
                     {/* START OF DIV ROW */}
-
+                    <br />
                     {/* FIRST COL */}
                     <div className="row">
                       <div className="col-md">
                         <h5 className="text-center">List A</h5>
+                        <h6 className="text-center">
+                          Identity and Employment Authorization
+                        </h6>
                         <div>
                           <input
                             type="text"
@@ -292,6 +296,7 @@ const AddRepresentativeComponent = () => {
                       <div className="vr"></div>
                       <div className="col-md">
                         <h5 className="text-center">List B</h5>
+                        <h6 className="text-center">Identity</h6>
                         <input
                           type="text"
                           placeholder="Document Title"
@@ -341,6 +346,9 @@ const AddRepresentativeComponent = () => {
 
                       <div className="col-md">
                         <h5 className="text-center">List C</h5>
+                        <h6 className="text-center">
+                          Employment Authorization{" "}
+                        </h6>
                         <input
                           type="text"
                           placeholder="Document Title"
@@ -390,17 +398,22 @@ const AddRepresentativeComponent = () => {
                         is authorized to work in the United States.
                       </b>
                     </p>
-                    <p className="paragraphs">
-                      The employee's first day of employment{" "}
-                      <a href={i9Instructions} target="_blank">
-                        {" "}
-                        (See instructions)
-                      </a>
-                      for exemptions:{" "}
-                    </p>
-                    <div className="col-md-3">
-                      <input type="date" className="form-control"></input>
+                    <div className="row">
+                      <div className="col">
+                        The employee's first day of employment{" "}
+                      </div>
+                      <div className="col-sm-3 left">
+                        <input type="date" className="form-control"></input>
+                      </div>
+                      <div className="col">
+                        <a href={i9Instructions} target="_blank">
+                          (See instructions)
+                        </a>
+                        &nbsp;for exemptions:
+                      </div>
                     </div>
+
+                    <br />
                     <div className="row g-3">
                       <div className="col-md-5">
                         <input
@@ -610,7 +623,8 @@ const AddRepresentativeComponent = () => {
                                 ></button>
                               </div>
                               <div className="modal-body">
-                                Are you sure you are done reviewing this I-9 Form? If you are submit this form
+                                Are you sure you are done reviewing this I-9
+                                Form? IF you are, click SUBMIT
                               </div>
                               <div className="modal-footer">
                                 <button
@@ -628,6 +642,10 @@ const AddRepresentativeComponent = () => {
                                 >
                                   Submit
                                 </button>
+                                <Link 
+                                to="/Reviewer"
+                                className="btn btn-success"
+                                >Continue Testing</Link>
                               </div>
                             </div>
                           </div>

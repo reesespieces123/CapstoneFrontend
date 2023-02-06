@@ -1,13 +1,15 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-material.css"; // Optional theme CSS
 import "ag-grid-enterprise";
 import authHeader from "../services/auth-header";
 
-const ListEmployeeComponent = () => {
+const EmployeesTableComponent = () => {
   const [employees, setEmployees] = useState([]);
+
+  // const gridRef = useRef();
+  //const { params } = useParams();
 
   useEffect(() => {
     fetch("http://localhost:8080/api/test/admin", { headers: authHeader() })
@@ -21,6 +23,10 @@ const ListEmployeeComponent = () => {
       field: "id",
       sortable: true,
       filter: "agTextColumnFilter",
+      //  filter: "agTextColumnFilter",
+      // headerCheckboxSelection: true,
+      // checkboxSelection: true,
+      // showDisabledCheckboxes: true,
     },
     {
       field: "first_name",
@@ -28,14 +34,9 @@ const ListEmployeeComponent = () => {
       filter: "agTextColumnFilter",
     },
     { field: "last_name", sortable: true, filter: "agTextColumnFilter" },
-    { field: "employee_email", sortable: true, filter: "agTextColumnFilter" },
-    {
-      field: "i-9 form",
-      cellRenderer: (params) => {
-        let link = `/EmployeeId/${params.data.id}`;
-        return <Link to={link}>I-9 FORM</Link>;
-      },
-    },
+    { field: "address", sortable: true, filter: "agTextColumnFilter" },
+    { field: "state", sortable: true, filter: "agTextColumnFilter" },
+    { field: "zipcode", sortable: true, filter: "agTextColumnFilter" },
   ]);
 
   //  Adding the status bar elements
@@ -67,7 +68,9 @@ const ListEmployeeComponent = () => {
           <br />
 
           <div className="row">
-            <h2 className="text-left">Welcome Reviewer!</h2>
+            <h2 className="text-left">Welcome Employer</h2>
+            <p>All employee information</p>
+            <br/>
             <div
               className="ag-theme-material"
               style={{ height: 800, width: 1500 }}
@@ -91,4 +94,4 @@ const ListEmployeeComponent = () => {
   );
 };
 
-export default ListEmployeeComponent;
+export default EmployeesTableComponent;

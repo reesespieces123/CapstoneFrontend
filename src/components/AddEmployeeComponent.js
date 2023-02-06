@@ -143,7 +143,7 @@ const AddEmployeeComponent = () => {
   const title = () => {
     return (
       <>
-        <h2 className="text-center">I-9 Section 1</h2>
+        <h2 className="text-center">Employment Eligibility Verification</h2>
       </>
     );
   };
@@ -185,6 +185,15 @@ const AddEmployeeComponent = () => {
                   The refusal to hire or continue to employ an individual
                   because the documentation presented has a future expiration
                   date may also constitute illegal discrimination.{" "}
+                </p>
+              </div>
+              <hr />
+              <div className="">
+                <h4>Section 1. Employee Information and Attestation</h4>{" "}
+                <p>
+                  (Employees must complete and sign Section 1 of Form I-9 no
+                  later than the first day of employment, but not before
+                  accepting a job offer.)
                 </p>
               </div>
               {/* FORM STARTS HERE */}
@@ -376,6 +385,7 @@ const AddEmployeeComponent = () => {
                 </div>
                 {/* END OF THIRD DIV ROW */}
                 <br />
+                <hr />
                 {/** //////////////////////////////////////////////////// */}
                 <p className="paragraphs-2">
                   <b>
@@ -616,10 +626,12 @@ const AddEmployeeComponent = () => {
                     {/*  */}
                   </ol>
                 </div>
+                <hr />
                 {/* //////////////////////////////////////// */}
                 <div className="row">
                   <div className="col">
                     <label className=""> Employee Signature :</label>
+                    <br />
                     <input
                       type="text"
                       placeholder="Enter Employee Signature"
@@ -632,7 +644,7 @@ const AddEmployeeComponent = () => {
 
                   <div className="col">
                     <label className=""> Signature Date :</label>
-
+                    <br />
                     <input
                       type="date"
                       placeholder="Enter Date Signed"
@@ -643,25 +655,29 @@ const AddEmployeeComponent = () => {
                     ></input>
                   </div>
                 </div>
+                <br />
                 <hr />
-                <h5>Preparer and/or Translator Certification (check one):</h5>
-                <label>
+                <h4>Preparer and/or Translator Certification (check one):</h4>
+                <p>
                   <em className="">
                     (Fields below must be completed and signed when preparers
                     and/or translators assist an employee in completing Section
                     1.)
                   </em>
-                </label>
-                {/* <label>
-                    <b className="m-text">
-                      (Fields below must be completed and signed when preparers
-                      and/or translators assist an employee in completing
-                      Section 1.)
-                    </b>
-                  </label> */}
-                <br /> <br />
+                </p>
+                <p>
+                  <b>
+                    I attest, under penalty of perjury, that I have assisted in
+                    the completion of Section 1 of this form and that to the
+                    best of my knowledge the information is true and correct.{" "}
+                  </b>
+                </p>
+
                 <div className="row">
                   <div className="col-7">
+                    <label className="form-label">
+                      Signature of Preparer or Translator:
+                    </label>
                     <input
                       type="text"
                       placeholder="Signature of Preparer or Translator"
@@ -672,6 +688,7 @@ const AddEmployeeComponent = () => {
                     ></input>
                   </div>
                   <div className="col-5">
+                    <label className="form-label">Today's Date:</label>
                     <input
                       type="date"
                       placeholder="Today's Date"
@@ -685,6 +702,9 @@ const AddEmployeeComponent = () => {
                 <br />
                 <div className="row">
                   <div className="col">
+                    <label className="form-label">
+                      Last Name (Family Name):
+                    </label>
                     <input
                       type="text"
                       placeholder="Last Name (Family Name)"
@@ -696,6 +716,9 @@ const AddEmployeeComponent = () => {
                   </div>
 
                   <div className="col">
+                    <label className="form-label">
+                      First Name (Given Name):
+                    </label>
                     <input
                       type="text"
                       placeholder="First Name (Given Name)"
@@ -709,6 +732,9 @@ const AddEmployeeComponent = () => {
                 <br />
                 <div className="row">
                   <div className="col-5">
+                    <label className="form-label">
+                      Address (Street Number and Name):
+                    </label>
                     <input
                       type="text"
                       placeholder="Address (Street Number and Name)"
@@ -720,6 +746,7 @@ const AddEmployeeComponent = () => {
                   </div>
 
                   <div className="col-4">
+                    <label className="form-label">City or Town:</label>
                     <input
                       type="text"
                       placeholder="City or Town"
@@ -731,6 +758,7 @@ const AddEmployeeComponent = () => {
                   </div>
 
                   <div className="col-1">
+                    <label className="form-label">State:</label>
                     <input
                       type="text"
                       placeholder="State"
@@ -741,9 +769,10 @@ const AddEmployeeComponent = () => {
                     ></input>
                   </div>
                   <div className="col-2">
+                    <label className="form-label">Zip Code:</label>
                     <input
                       type="text"
-                      placeholder="ZIP Code"
+                      placeholder="Zip Code"
                       name="preparerzip"
                       className="form-control"
                       value={preparerzip}
@@ -801,7 +830,7 @@ const AddEmployeeComponent = () => {
                               Cancel
                             </button>
 
-                            <Link to="/reviewer" className="btn btn-success">
+                            <Link to="/profile" className="btn btn-success">
                               Continue
                             </Link>
                           </div>
