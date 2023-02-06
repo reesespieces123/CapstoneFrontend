@@ -1,4 +1,10 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, {
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Link } from "react-router-dom";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
@@ -8,6 +14,8 @@ import authHeader from "../services/auth-header";
 
 const ListEmployeeComponent = () => {
   const [employees, setEmployees] = useState([]);
+
+  const gridRef = useRef();
 
   useEffect(() => {
     fetch("http://localhost:8080/api/test/admin", { headers: authHeader() })
@@ -60,6 +68,7 @@ const ListEmployeeComponent = () => {
     };
   }, []);
 
+
   return (
     <>
       <div className="container-max-width: 1519px">
@@ -68,6 +77,7 @@ const ListEmployeeComponent = () => {
 
           <div className="row">
             <h2 className="text-left">Welcome Reviewer!</h2>
+            
             <div
               className="ag-theme-material"
               style={{ height: 800, width: 1500 }}
@@ -77,11 +87,11 @@ const ListEmployeeComponent = () => {
               <AgGridReact
                 rowData={employees}
                 columnDefs={columnDefs}
-                rowSelection="multiple"
-                animateRows={true}
+                // rowSelection="multiple"
+                // animateRows={true}
                 defaultColDef={defaultColDef}
                 statusBar={statusBar}
-                enableRangeSelection={true}
+                // enableRangeSelection={true}
               ></AgGridReact>
             </div>
           </div>

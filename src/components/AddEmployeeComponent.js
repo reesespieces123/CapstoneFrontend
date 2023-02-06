@@ -402,88 +402,69 @@ const AddEmployeeComponent = () => {
                 </p>
                 {/** //////////////////////////////////////////////////// */}
                 <label htmlFor="">Citizenship Status:</label>
+                <div className="space"></div>
                 {/* FOURTH DIV ROW */}
                 <div className="row">
-                  {/* START OF UL */}
-                  <ul className="list-unstyled checkbox-list">
-                    {/* 1 */}
-                    <li>
-                      <input
-                        type="radio"
-                        name="citizenshipstatus"
-                        id="citizen"
-                        value="citizen"
-                      />
-                      <label htmlFor="citizen">
-                        A citizen of the United States
-                      </label>
-                    </li>
-
-                    <div className="space"></div>
-
-                    {/* 2 */}
-                    <li>
-                      <input
-                        type="radio"
-                        name="citizenshipstatus"
-                        id="noncitizennational"
-                        value="noncitizennational"
-                      />
-                      <label htmlFor="noncitizennational">
-                        A noncitizen national of the United States
-                      </label>
-                      <em>
-                        <a target="_blank" href={i9Instructions}>
-                          (See instructions)
-                        </a>
-                      </em>
-                    </li>
-
-                    <div className="space"></div>
-
-                    {/* SECOND ROW  */}
-                    <div className="row">
-                      {/* FIRST COL */}
-                      <div className="col-6">
-                        <li>
-                          <input
-                            type="radio"
-                            name="citizenshipstatus"
-                            className="form-label"
-                            id="lawfulpermanentresident"
-                            value="lawfulpermanentresident"
-                          />
-                          <label htmlFor="lawfulpermanentresident">
-                            A lawful permanent resident
-                          </label>
-                        </li>
-                      </div>
-                      {/* SECOND COL */}
-                      <div className="col-6">
-                        <input
-                          type="text"
-                          placeholder="Enter Alien Authorization Number"
-                          name="alienauthorizationnumber"
-                          className="form-control"
-                          value={alienauthorizationnumber}
-                          onChange={(e) =>
-                            setAlienauthorizationnumber(e.target.value)
-                          }
-                        ></input>
-                      </div>
-                      <p className="small-text">
-                        (Alien Authorization Number/USCIS Number):
-                      </p>
-                    </div>
-                  </ul>
-                  {/* END OF UL TAG */}
+                  <div className="col">
+                    {" "}
+                    <input
+                      type="radio"
+                      name="citizenshipstatus"
+                      id="citizen"
+                      value="citizen"
+                    />
+                    &nbsp;A citizen of the United States
+                  </div>
                 </div>
-                {/* END OF FOURTH DIV ROW */}
-                {/** //////////////////////////////////////////////////// */}
-                {/* START OF FIFTH DIV ROW */}
+                <div className="space"></div>
+                <div className="row">
+                  <div className="col">
+                    <input
+                      type="radio"
+                      name="citizenshipstatus"
+                      id="noncitizennational"
+                      value="noncitizennational"
+                    />
+                    &nbsp;A noncitizen national of the United States
+                    <em>
+                      <a target="_blank" href={i9Instructions}>
+                        (See instructions)
+                      </a>
+                    </em>
+                  </div>
+                </div>
+                <div className="space"></div>
+                <div className="row">
+                  <div className="col">
+                    <input
+                      type="radio"
+                      name="citizenshipstatus"
+                      className="form-label"
+                      id="lawfulpermanentresident"
+                      value="lawfulpermanentresident"
+                    />
+                    &nbsp;A lawful permanent resident{" "}
+                    <em className="small-text">
+                      (Alien Authorization Number/USCIS Number):
+                    </em>
+                  </div>
+                  <div className="col-5">
+                    <input
+                      type="text"
+                      placeholder="Enter Alien Authorization Number"
+                      name="alienauthorizationnumber"
+                      className="form-control"
+                      value={alienauthorizationnumber}
+                      onChange={(e) =>
+                        setAlienauthorizationnumber(e.target.value)
+                      }
+                    ></input>
+                  </div>
+                </div>
+                <div className="space"></div>
                 <div className="row">
                   {/* FIRST COL */}
-                  <div className="col-9">
+                  <div className="col">
                     <input
                       type="radio"
                       className="form-label"
@@ -491,14 +472,18 @@ const AddEmployeeComponent = () => {
                       id="authorizedalien"
                       value="authorizedalien"
                     />
-                    <label>
-                      An alien authorized to work until (expiration date, if
-                      applicable,
-                    </label>
-                    <label>mm/dd/yyyy):</label>
+                    &nbsp;An alien authorized to work until (expiration date, if
+                    applicable, mm/dd/yyyy):
+                    <p>
+                      Some aliens may write "N/A" in the expiration date field.
+                      <em>
+                        <a target="_blank" href={i9Instructions}>
+                          (See instructions)
+                        </a>
+                      </em>
+                    </p>
                   </div>
-                  {/* SECOND COL */}
-                  <div className="col-3">
+                  <div className="col-5">
                     <input
                       type="date"
                       placeholder="Enter expiration date"
@@ -508,15 +493,10 @@ const AddEmployeeComponent = () => {
                       onChange={(e) => setexpirationdate(e.target.value)}
                     ></input>
                   </div>
+
+
                   {/* END OF FIFTH ROW */}
-                  <label>
-                    Some aliens may write "N/A" in the expiration date field.
-                    <em>
-                      <a target="_blank" href={i9Instructions}>
-                        (See instructions)
-                      </a>
-                    </em>
-                  </label>
+
                   <br />
                   <br />
                   <label>
