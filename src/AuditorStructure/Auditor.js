@@ -35,6 +35,7 @@ const EmployeesTableComponent = () => {
     },
     { field: "last_name", sortable: true, filter: "agTextColumnFilter" },
     { field: "status", sortable: true, filter: "agTextColumnFilter" },
+    
   ]);
 
   //  Adding the status bar elements

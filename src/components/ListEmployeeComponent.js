@@ -89,7 +89,7 @@ const ListEmployeeComponent = () => {
                 columnDefs={columnDefs}
                 // rowSelection="multiple"
                 // animateRows={true}
-                defaultColDef={defaultColDef}
+                // defaultColDef={defaultColDef}
                 statusBar={statusBar}
                 // enableRangeSelection={true}
               ></AgGridReact>
