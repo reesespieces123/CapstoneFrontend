@@ -71,7 +71,7 @@ const App = () => {
       <nav className="navbar navbar-expand navbar-dark bg-primary">
         <Link to={"/Landing"} className="navbar-brand">
           &nbsp;	&nbsp;
-          <img src={adp} alt="logo" height="35" />
+          {/* <img src={adp} alt="logo" height="35" /> */}
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">

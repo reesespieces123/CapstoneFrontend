@@ -34,9 +34,10 @@ const EmployeesTableComponent = () => {
       filter: "agTextColumnFilter",
     },
     { field: "last_name", sortable: true, filter: "agTextColumnFilter" },
-    { field: "address", sortable: true, filter: "agTextColumnFilter" },
     { field: "state", sortable: true, filter: "agTextColumnFilter" },
     { field: "zipcode", sortable: true, filter: "agTextColumnFilter" },
+    { field: "i9status", sortable: true, filter: "agTextColumnFilter" },
+    { field: "blacklist", sortable: true, filter: "agTextColumnFilter" },
   ]);
 
   //  Adding the status bar elements
